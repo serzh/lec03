@@ -1,830 +1,2204 @@
-
-
-
-<!DOCTYPE html>
-<html lang="en" class="">
-  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Language" content="en">
-    
-    
-    <title>erlang.mk/erlang.mk at master · ninenines/erlang.mk · GitHub</title>
-    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
-    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
-    <meta property="fb:app_id" content="1401488693436528">
-
-      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="ninenines/erlang.mk" name="twitter:title" /><meta content="erlang.mk - Fast and highly configurable GNU Make build and testing tool for Erlang." name="twitter:description" /><meta content="https://avatars2.githubusercontent.com/u/1166740?v=3&amp;s=400" name="twitter:image:src" />
-      <meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars2.githubusercontent.com/u/1166740?v=3&amp;s=400" property="og:image" /><meta content="ninenines/erlang.mk" property="og:title" /><meta content="https://github.com/ninenines/erlang.mk" property="og:url" /><meta content="erlang.mk - Fast and highly configurable GNU Make build and testing tool for Erlang." property="og:description" />
-      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
-    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
-    <link rel="assets" href="https://assets-cdn.github.com/">
-    
-    <meta name="pjax-timeout" content="1000">
-    
-
-    <meta name="msapplication-TileImage" content="/windows-tile.png">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="selected-link" value="repo_source" data-pjax-transient>
-      <meta name="google-analytics" content="UA-3769691-2">
-
-    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="5BC23361:7BA3:5730B2B:556CA12C" name="octolytics-dimension-request_id" />
-    
-    <meta content="Rails, view, blob#show" name="analytics-event" />
-    <meta class="js-ga-set" name="dimension1" content="Logged Out">
-    <meta class="js-ga-set" name="dimension2" content="Header v3">
-    <meta name="is-dotcom" content="true">
-      <meta name="hostname" content="github.com">
-    <meta name="user-login" content="">
-
-    
-    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
-
-
-    <meta content="authenticity_token" name="csrf-param" />
-<meta content="mgdrEYozPqnGzWsGo1b6KBFZrloqEIyXdhKMGIkyprVcILRkVV2+Skryje7qYOy5UbEZ+pyHvW65Lhv5btXj5w==" name="csrf-token" />
-
-    <link href="https://assets-cdn.github.com/assets/github/index-7e77e66f8436e66d6a9791d7a09cec15828e9e04a0ad97cf73e83223f8b9cb3a.css" media="all" rel="stylesheet" />
-    <link href="https://assets-cdn.github.com/assets/github2/index-5df271cf586eee5e48a88e30cdb6b5c32413ce1d7337835a905fc8c16294237e.css" media="all" rel="stylesheet" />
-    
-    
-
-
-    <meta http-equiv="x-pjax-version" content="840467a6cd0c672c678f4fd42f529999">
-
-      
-  <meta name="description" content="erlang.mk - Fast and highly configurable GNU Make build and testing tool for Erlang.">
-  <meta name="go-import" content="github.com/ninenines/erlang.mk git https://github.com/ninenines/erlang.mk.git">
-
-  <meta content="1166740" name="octolytics-dimension-user_id" /><meta content="ninenines" name="octolytics-dimension-user_login" /><meta content="9777075" name="octolytics-dimension-repository_id" /><meta content="ninenines/erlang.mk" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="9777075" name="octolytics-dimension-repository_network_root_id" /><meta content="ninenines/erlang.mk" name="octolytics-dimension-repository_network_root_nwo" />
-  <link href="https://github.com/ninenines/erlang.mk/commits/master.atom" rel="alternate" title="Recent Commits to erlang.mk:master" type="application/atom+xml">
-
-  </head>
-
-
-  <body class="logged_out  env-production  vis-public page-blob">
-    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
-    <div class="wrapper">
-      
-      
-      
-
-
-        
-        <div class="header header-logged-out" role="banner">
-  <div class="container clearfix">
-
-    <a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
-      <span class="mega-octicon octicon-logo-github"></span>
-    </a>
-
-    <div class="header-actions" role="navigation">
-        <a class="btn btn-primary" href="/join" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
-      <a class="btn" href="/login?return_to=%2Fninenines%2Ferlang.mk%2Fblob%2Fmaster%2Ferlang.mk" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
-    </div>
-
-    <div class="site-search repo-scope js-site-search" role="search">
-      <form accept-charset="UTF-8" action="/ninenines/erlang.mk/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/ninenines/erlang.mk/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-  <label class="js-chromeless-input-container form-control">
-    <div class="scope-badge">This repository</div>
-    <input type="text"
-      class="js-site-search-focus js-site-search-field is-clearable chromeless-input"
-      data-hotkey="s"
-      name="q"
-      placeholder="Search"
-      data-global-scope-placeholder="Search GitHub"
-      data-repo-scope-placeholder="Search"
-      tabindex="1"
-      autocapitalize="off">
-  </label>
-</form>
-    </div>
-
-      <ul class="header-nav left" role="navigation">
-          <li class="header-nav-item">
-            <a class="header-nav-link" href="/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
-          </li>
-          <li class="header-nav-item">
-            <a class="header-nav-link" href="/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
-          </li>
-          <li class="header-nav-item">
-            <a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
-          </li>
-          <li class="header-nav-item">
-            <a class="header-nav-link" href="/blog" data-ga-click="(Logged out) Header, go to blog, text:blog">Blog</a>
-          </li>
-      </ul>
-
-  </div>
-</div>
-
-
-
-      <div id="start-of-content" class="accessibility-aid"></div>
-          <div class="site" itemscope itemtype="http://schema.org/WebPage">
-    <div id="js-flash-container">
-      
-    </div>
-    <div class="pagehead repohead instapaper_ignore readability-menu">
-      <div class="container">
-        
-<ul class="pagehead-actions">
-
-  <li>
-      <a href="/login?return_to=%2Fninenines%2Ferlang.mk"
-    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
-    aria-label="You must be signed in to watch a repository" rel="nofollow">
-    <span class="octicon octicon-eye"></span>
-    Watch
-  </a>
-  <a class="social-count" href="/ninenines/erlang.mk/watchers">
-    38
-  </a>
-
-  </li>
-
-  <li>
-      <a href="/login?return_to=%2Fninenines%2Ferlang.mk"
-    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
-    aria-label="You must be signed in to star a repository" rel="nofollow">
-    <span class="octicon octicon-star"></span>
-    Star
-  </a>
-
-    <a class="social-count js-social-count" href="/ninenines/erlang.mk/stargazers">
-      293
-    </a>
-
-  </li>
-
-    <li>
-      <a href="/login?return_to=%2Fninenines%2Ferlang.mk"
-        class="btn btn-sm btn-with-count tooltipped tooltipped-n"
-        aria-label="You must be signed in to fork a repository" rel="nofollow">
-        <span class="octicon octicon-repo-forked"></span>
-        Fork
-      </a>
-      <a href="/ninenines/erlang.mk/network" class="social-count">
-        116
-      </a>
-    </li>
-</ul>
-
-        <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
-          <span class="mega-octicon octicon-repo"></span>
-          <span class="author"><a href="/ninenines" class="url fn" itemprop="url" rel="author"><span itemprop="title">ninenines</span></a></span><!--
-       --><span class="path-divider">/</span><!--
-       --><strong><a href="/ninenines/erlang.mk" data-pjax="#js-repo-pjax-container">erlang.mk</a></strong>
-
-          <span class="page-context-loader">
-            <img alt="" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
-          </span>
-
-        </h1>
-      </div><!-- /.container -->
-    </div><!-- /.repohead -->
-
-    <div class="container">
-      <div class="repository-with-sidebar repo-container new-discussion-timeline  ">
-        <div class="repository-sidebar clearfix">
-            
-<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders"
-     role="navigation"
-     data-pjax="#js-repo-pjax-container"
-     data-issue-count-url="/ninenines/erlang.mk/issues/counts">
-  <ul class="sunken-menu-group">
-    <li class="tooltipped tooltipped-w" aria-label="Code">
-      <a href="/ninenines/erlang.mk" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /ninenines/erlang.mk">
-        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
-        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
-</a>    </li>
-
-      <li class="tooltipped tooltipped-w" aria-label="Issues">
-        <a href="/ninenines/erlang.mk/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /ninenines/erlang.mk/issues">
-          <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
-          <span class="js-issue-replace-counter"></span>
-          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
-</a>      </li>
-
-    <li class="tooltipped tooltipped-w" aria-label="Pull requests">
-      <a href="/ninenines/erlang.mk/pulls" aria-label="Pull requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /ninenines/erlang.mk/pulls">
-          <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull requests</span>
-          <span class="js-pull-replace-counter"></span>
-          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
-</a>    </li>
-
-  </ul>
-  <div class="sunken-menu-separator"></div>
-  <ul class="sunken-menu-group">
-
-    <li class="tooltipped tooltipped-w" aria-label="Pulse">
-      <a href="/ninenines/erlang.mk/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /ninenines/erlang.mk/pulse">
-        <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
-        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
-</a>    </li>
-
-    <li class="tooltipped tooltipped-w" aria-label="Graphs">
-      <a href="/ninenines/erlang.mk/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /ninenines/erlang.mk/graphs">
-        <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
-        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
-</a>    </li>
-  </ul>
-
-
-</nav>
-
-              <div class="only-with-full-nav">
-                  
-<div class="js-clone-url clone-url open"
-  data-protocol-type="http">
-  <h3><span class="text-emphasized">HTTPS</span> clone URL</h3>
-  <div class="input-group js-zeroclipboard-container">
-    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
-           value="https://github.com/ninenines/erlang.mk.git" readonly="readonly">
-    <span class="input-group-button">
-      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
-    </span>
-  </div>
-</div>
-
-  
-<div class="js-clone-url clone-url "
-  data-protocol-type="subversion">
-  <h3><span class="text-emphasized">Subversion</span> checkout URL</h3>
-  <div class="input-group js-zeroclipboard-container">
-    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
-           value="https://github.com/ninenines/erlang.mk" readonly="readonly">
-    <span class="input-group-button">
-      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
-    </span>
-  </div>
-</div>
-
-
-
-<div class="clone-options">You can clone with
-  <form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone" class="inline-form js-clone-selector-form " data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="qoM3YLlYbW7Jua0mHqIlH0POzGQCVvX0EO0I6+RGtPowSrEYrEOjZVnE61mEXYaQZyKhv1af3V0t06fWyw/3NA==" /></div><button class="btn-link js-clone-selector" data-protocol="http" type="submit">HTTPS</button></form> or <form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone" class="inline-form js-clone-selector-form " data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="TZf+p7fnZb7CTm3tFS+THubXm2H/xteXN9r34prg/7RaUi6UPZpZCekjwQE/qpxtfOzHNKoqbEMKASMM8SzBDg==" /></div><button class="btn-link js-clone-selector" data-protocol="subversion" type="submit">Subversion</button></form>.
-  <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
-    <span class="octicon octicon-question"></span>
-  </a>
-</div>
-
-
-
-
-                <a href="/ninenines/erlang.mk/archive/master.zip"
-                   class="btn btn-sm sidebar-button"
-                   aria-label="Download the contents of ninenines/erlang.mk as a zip file"
-                   title="Download the contents of ninenines/erlang.mk as a zip file"
-                   rel="nofollow">
-                  <span class="octicon octicon-cloud-download"></span>
-                  Download ZIP
-                </a>
-              </div>
-        </div><!-- /.repository-sidebar -->
-
-        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container>
-
-          
-
-<a href="/ninenines/erlang.mk/blob/7dc8c4fd44f483a5f1b6ec2002b7e312d5b34581/erlang.mk" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
-
-<!-- blob contrib key: blob_contributors:v21:bc0a397c03307c9edfc1fc42f4aa4569 -->
-
-<div class="file-navigation js-zeroclipboard-container">
-  
-<div class="select-menu js-menu-container js-select-menu left">
-  <span class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
-    data-ref="master"
-    title="master"
-    role="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
-    <span class="octicon octicon-git-branch"></span>
-    <i>branch:</i>
-    <span class="js-select-button css-truncate-target">master</span>
-  </span>
-
-  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
-
-    <div class="select-menu-modal">
-      <div class="select-menu-header">
-        <span class="select-menu-title">Switch branches/tags</span>
-        <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
-      </div>
-
-      <div class="select-menu-filters">
-        <div class="select-menu-text-filter">
-          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
-        </div>
-        <div class="select-menu-tabs">
-          <ul>
-            <li class="select-menu-tab">
-              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab">Branches</a>
-            </li>
-            <li class="select-menu-tab">
-              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab">Tags</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
-
-        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
-
-
-            <a class="select-menu-item js-navigation-item js-navigation-open selected"
-               href="/ninenines/erlang.mk/blob/master/erlang.mk"
-               data-name="master"
-               data-skip-pjax="true"
-               rel="nofollow">
-              <span class="select-menu-item-icon octicon octicon-check"></span>
-              <span class="select-menu-item-text css-truncate-target" title="master">
-                master
-              </span>
-            </a>
-        </div>
-
-          <div class="select-menu-no-results">Nothing to show</div>
-      </div>
-
-      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
-        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
-
-
-            <div class="select-menu-item js-navigation-item ">
-              <span class="select-menu-item-icon octicon octicon-check"></span>
-              <a href="/ninenines/erlang.mk/tree/1.2.0/erlang.mk"
-                 data-name="1.2.0"
-                 data-skip-pjax="true"
-                 rel="nofollow"
-                 class="js-navigation-open select-menu-item-text css-truncate-target"
-                 title="1.2.0">1.2.0</a>
-            </div>
-            <div class="select-menu-item js-navigation-item ">
-              <span class="select-menu-item-icon octicon octicon-check"></span>
-              <a href="/ninenines/erlang.mk/tree/1.1.0/erlang.mk"
-                 data-name="1.1.0"
-                 data-skip-pjax="true"
-                 rel="nofollow"
-                 class="js-navigation-open select-menu-item-text css-truncate-target"
-                 title="1.1.0">1.1.0</a>
-            </div>
-            <div class="select-menu-item js-navigation-item ">
-              <span class="select-menu-item-icon octicon octicon-check"></span>
-              <a href="/ninenines/erlang.mk/tree/1.0.0/erlang.mk"
-                 data-name="1.0.0"
-                 data-skip-pjax="true"
-                 rel="nofollow"
-                 class="js-navigation-open select-menu-item-text css-truncate-target"
-                 title="1.0.0">1.0.0</a>
-            </div>
-            <div class="select-menu-item js-navigation-item ">
-              <span class="select-menu-item-icon octicon octicon-check"></span>
-              <a href="/ninenines/erlang.mk/tree/0.3.0/erlang.mk"
-                 data-name="0.3.0"
-                 data-skip-pjax="true"
-                 rel="nofollow"
-                 class="js-navigation-open select-menu-item-text css-truncate-target"
-                 title="0.3.0">0.3.0</a>
-            </div>
-            <div class="select-menu-item js-navigation-item ">
-              <span class="select-menu-item-icon octicon octicon-check"></span>
-              <a href="/ninenines/erlang.mk/tree/0.2.0/erlang.mk"
-                 data-name="0.2.0"
-                 data-skip-pjax="true"
-                 rel="nofollow"
-                 class="js-navigation-open select-menu-item-text css-truncate-target"
-                 title="0.2.0">0.2.0</a>
-            </div>
-            <div class="select-menu-item js-navigation-item ">
-              <span class="select-menu-item-icon octicon octicon-check"></span>
-              <a href="/ninenines/erlang.mk/tree/0.1.0/erlang.mk"
-                 data-name="0.1.0"
-                 data-skip-pjax="true"
-                 rel="nofollow"
-                 class="js-navigation-open select-menu-item-text css-truncate-target"
-                 title="0.1.0">0.1.0</a>
-            </div>
-        </div>
-
-        <div class="select-menu-no-results">Nothing to show</div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-  <div class="btn-group right">
-    <a href="/ninenines/erlang.mk/find/master"
-          class="js-show-file-finder btn btn-sm empty-icon tooltipped tooltipped-s"
-          data-pjax
-          data-hotkey="t"
-          aria-label="Quickly jump between files">
-      <span class="octicon octicon-list-unordered"></span>
-    </a>
-    <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
-  </div>
-
-  <div class="breadcrumb js-zeroclipboard-target">
-    <span class='repo-root js-repo-root'><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/ninenines/erlang.mk" class="" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">erlang.mk</span></a></span></span><span class="separator">/</span><strong class="final-path">erlang.mk</strong>
-  </div>
-</div>
-
-
-  <div class="commit file-history-tease">
-    <div class="file-history-tease-header">
-        <img alt="@essen" class="avatar" data-user="141739" height="24" src="https://avatars0.githubusercontent.com/u/141739?v=3&amp;s=48" width="24" />
-        <span class="author"><a href="/essen" rel="contributor">essen</a></span>
-        <time datetime="2015-05-15T07:20:12Z" is="relative-time">May 15, 2015</time>
-        <div class="commit-title">
-            <a href="/ninenines/erlang.mk/commit/a294038c83a631813af3708be3b986ef6a6e3468" class="message" data-pjax="true" title="Replace make with $(MAKE) for BSD compatibility">Replace make with $(MAKE) for BSD compatibility</a>
-        </div>
-    </div>
-
-    <div class="participation">
-      <p class="quickstat">
-        <a href="#blob_contributors_box" rel="facebox">
-          <strong>45</strong>
-           contributors
-        </a>
-      </p>
-          <a class="avatar-link tooltipped tooltipped-s" aria-label="essen" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=essen"><img alt="@essen" class="avatar" data-user="141739" height="20" src="https://avatars2.githubusercontent.com/u/141739?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="kiela" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=kiela"><img alt="@kiela" class="avatar" data-user="680266" height="20" src="https://avatars3.githubusercontent.com/u/680266?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="danielwhite" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=danielwhite"><img alt="@danielwhite" class="avatar" data-user="481511" height="20" src="https://avatars2.githubusercontent.com/u/481511?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="nevar" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=nevar"><img alt="@nevar" class="avatar" data-user="540193" height="20" src="https://avatars1.githubusercontent.com/u/540193?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="srstrong" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=srstrong"><img alt="@srstrong" class="avatar" data-user="212033" height="20" src="https://avatars2.githubusercontent.com/u/212033?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="crownedgrouse" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=crownedgrouse"><img alt="@crownedgrouse" class="avatar" data-user="4357695" height="20" src="https://avatars1.githubusercontent.com/u/4357695?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="derek121" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=derek121"><img alt="@derek121" class="avatar" data-user="1594587" height="20" src="https://avatars3.githubusercontent.com/u/1594587?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="dch" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=dch"><img alt="@dch" class="avatar" data-user="284368" height="20" src="https://avatars2.githubusercontent.com/u/284368?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="efcasado" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=efcasado"><img alt="@efcasado" class="avatar" data-user="603610" height="20" src="https://avatars0.githubusercontent.com/u/603610?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="eliangidoni" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=eliangidoni"><img alt="@eliangidoni" class="avatar" data-user="1263632" height="20" src="https://avatars3.githubusercontent.com/u/1263632?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="sedrik" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=sedrik"><img alt="@sedrik" class="avatar" data-user="94518" height="20" src="https://avatars0.githubusercontent.com/u/94518?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="kaos" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=kaos"><img alt="@kaos" class="avatar" data-user="72965" height="20" src="https://avatars3.githubusercontent.com/u/72965?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="jj1bdx" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=jj1bdx"><img alt="@jj1bdx" class="avatar" data-user="27508" height="20" src="https://avatars3.githubusercontent.com/u/27508?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="acammack" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=acammack"><img alt="@acammack" class="avatar" data-user="302081" height="20" src="https://avatars1.githubusercontent.com/u/302081?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="jaynel" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=jaynel"><img alt="@jaynel" class="avatar" data-user="184987" height="20" src="https://avatars1.githubusercontent.com/u/184987?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="jlouis" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=jlouis"><img alt="@jlouis" class="avatar" data-user="5663" height="20" src="https://avatars0.githubusercontent.com/u/5663?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="brigadier" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=brigadier"><img alt="@brigadier" class="avatar" data-user="5342151" height="20" src="https://avatars3.githubusercontent.com/u/5342151?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="fishcakez" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=fishcakez"><img alt="@fishcakez" class="avatar" data-user="2001229" height="20" src="https://avatars1.githubusercontent.com/u/2001229?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="igaray" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=igaray"><img alt="@igaray" class="avatar" data-user="167193" height="20" src="https://avatars3.githubusercontent.com/u/167193?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="goofansu" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=goofansu"><img alt="@goofansu" class="avatar" data-user="1143191" height="20" src="https://avatars3.githubusercontent.com/u/1143191?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="jfacorro" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=jfacorro"><img alt="@jfacorro" class="avatar" data-user="1522569" height="20" src="https://avatars2.githubusercontent.com/u/1522569?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="kolorahl" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=kolorahl"><img alt="@kolorahl" class="avatar" data-user="1781637" height="20" src="https://avatars3.githubusercontent.com/u/1781637?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="MarkNijhof" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=MarkNijhof"><img alt="@MarkNijhof" class="avatar" data-user="119686" height="20" src="https://avatars0.githubusercontent.com/u/119686?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="peerst" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=peerst"><img alt="@peerst" class="avatar" data-user="1201969" height="20" src="https://avatars2.githubusercontent.com/u/1201969?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="RJ" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=RJ"><img alt="@RJ" class="avatar" data-user="29747" height="20" src="https://avatars3.githubusercontent.com/u/29747?v=3&amp;s=40" width="20" /> </a>
-    <a class="avatar-link tooltipped tooltipped-s" aria-label="dvv" href="/ninenines/erlang.mk/commits/master/erlang.mk?author=dvv"><img alt="@dvv" class="avatar" data-user="211335" height="20" src="https://avatars3.githubusercontent.com/u/211335?v=3&amp;s=40" width="20" /> </a>
-
-    <a href="#blob_contributors_box" rel="facebox" class="others-text">and others</a>
-
-    </div>
-    <div id="blob_contributors_box" style="display:none">
-      <h2 class="facebox-header">Users who have contributed to this file</h2>
-      <ul class="facebox-user-list">
-          <li class="facebox-user-list-item">
-            <img alt="@essen" data-user="141739" height="24" src="https://avatars0.githubusercontent.com/u/141739?v=3&amp;s=48" width="24" />
-            <a href="/essen">essen</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@kiela" data-user="680266" height="24" src="https://avatars1.githubusercontent.com/u/680266?v=3&amp;s=48" width="24" />
-            <a href="/kiela">kiela</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@danielwhite" data-user="481511" height="24" src="https://avatars0.githubusercontent.com/u/481511?v=3&amp;s=48" width="24" />
-            <a href="/danielwhite">danielwhite</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@nevar" data-user="540193" height="24" src="https://avatars3.githubusercontent.com/u/540193?v=3&amp;s=48" width="24" />
-            <a href="/nevar">nevar</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@srstrong" data-user="212033" height="24" src="https://avatars0.githubusercontent.com/u/212033?v=3&amp;s=48" width="24" />
-            <a href="/srstrong">srstrong</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@crownedgrouse" data-user="4357695" height="24" src="https://avatars3.githubusercontent.com/u/4357695?v=3&amp;s=48" width="24" />
-            <a href="/crownedgrouse">crownedgrouse</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@derek121" data-user="1594587" height="24" src="https://avatars1.githubusercontent.com/u/1594587?v=3&amp;s=48" width="24" />
-            <a href="/derek121">derek121</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@dch" data-user="284368" height="24" src="https://avatars0.githubusercontent.com/u/284368?v=3&amp;s=48" width="24" />
-            <a href="/dch">dch</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@efcasado" data-user="603610" height="24" src="https://avatars2.githubusercontent.com/u/603610?v=3&amp;s=48" width="24" />
-            <a href="/efcasado">efcasado</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@eliangidoni" data-user="1263632" height="24" src="https://avatars1.githubusercontent.com/u/1263632?v=3&amp;s=48" width="24" />
-            <a href="/eliangidoni">eliangidoni</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@sedrik" data-user="94518" height="24" src="https://avatars2.githubusercontent.com/u/94518?v=3&amp;s=48" width="24" />
-            <a href="/sedrik">sedrik</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@kaos" data-user="72965" height="24" src="https://avatars1.githubusercontent.com/u/72965?v=3&amp;s=48" width="24" />
-            <a href="/kaos">kaos</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@jj1bdx" data-user="27508" height="24" src="https://avatars1.githubusercontent.com/u/27508?v=3&amp;s=48" width="24" />
-            <a href="/jj1bdx">jj1bdx</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@acammack" data-user="302081" height="24" src="https://avatars3.githubusercontent.com/u/302081?v=3&amp;s=48" width="24" />
-            <a href="/acammack">acammack</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@jaynel" data-user="184987" height="24" src="https://avatars3.githubusercontent.com/u/184987?v=3&amp;s=48" width="24" />
-            <a href="/jaynel">jaynel</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@jlouis" data-user="5663" height="24" src="https://avatars2.githubusercontent.com/u/5663?v=3&amp;s=48" width="24" />
-            <a href="/jlouis">jlouis</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@brigadier" data-user="5342151" height="24" src="https://avatars1.githubusercontent.com/u/5342151?v=3&amp;s=48" width="24" />
-            <a href="/brigadier">brigadier</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@fishcakez" data-user="2001229" height="24" src="https://avatars3.githubusercontent.com/u/2001229?v=3&amp;s=48" width="24" />
-            <a href="/fishcakez">fishcakez</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@igaray" data-user="167193" height="24" src="https://avatars1.githubusercontent.com/u/167193?v=3&amp;s=48" width="24" />
-            <a href="/igaray">igaray</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@goofansu" data-user="1143191" height="24" src="https://avatars1.githubusercontent.com/u/1143191?v=3&amp;s=48" width="24" />
-            <a href="/goofansu">goofansu</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@jfacorro" data-user="1522569" height="24" src="https://avatars0.githubusercontent.com/u/1522569?v=3&amp;s=48" width="24" />
-            <a href="/jfacorro">jfacorro</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@kolorahl" data-user="1781637" height="24" src="https://avatars1.githubusercontent.com/u/1781637?v=3&amp;s=48" width="24" />
-            <a href="/kolorahl">kolorahl</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@MarkNijhof" data-user="119686" height="24" src="https://avatars2.githubusercontent.com/u/119686?v=3&amp;s=48" width="24" />
-            <a href="/MarkNijhof">MarkNijhof</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@peerst" data-user="1201969" height="24" src="https://avatars0.githubusercontent.com/u/1201969?v=3&amp;s=48" width="24" />
-            <a href="/peerst">peerst</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@RJ" data-user="29747" height="24" src="https://avatars1.githubusercontent.com/u/29747?v=3&amp;s=48" width="24" />
-            <a href="/RJ">RJ</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@dvv" data-user="211335" height="24" src="https://avatars1.githubusercontent.com/u/211335?v=3&amp;s=48" width="24" />
-            <a href="/dvv">dvv</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@NineFX" data-user="4692391" height="24" src="https://avatars0.githubusercontent.com/u/4692391?v=3&amp;s=48" width="24" />
-            <a href="/NineFX">NineFX</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@Version2beta" data-user="893867" height="24" src="https://avatars3.githubusercontent.com/u/893867?v=3&amp;s=48" width="24" />
-            <a href="/Version2beta">Version2beta</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@s1n4" data-user="1089600" height="24" src="https://avatars2.githubusercontent.com/u/1089600?v=3&amp;s=48" width="24" />
-            <a href="/s1n4">s1n4</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@srijan" data-user="471308" height="24" src="https://avatars0.githubusercontent.com/u/471308?v=3&amp;s=48" width="24" />
-            <a href="/srijan">srijan</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@nifoc" data-user="222412" height="24" src="https://avatars3.githubusercontent.com/u/222412?v=3&amp;s=48" width="24" />
-            <a href="/nifoc">nifoc</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@umbec" data-user="702454" height="24" src="https://avatars0.githubusercontent.com/u/702454?v=3&amp;s=48" width="24" />
-            <a href="/umbec">umbec</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@cjsv" data-user="1677164" height="24" src="https://avatars0.githubusercontent.com/u/1677164?v=3&amp;s=48" width="24" />
-            <a href="/cjsv">cjsv</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@cwbriones" data-user="1554984" height="24" src="https://avatars2.githubusercontent.com/u/1554984?v=3&amp;s=48" width="24" />
-            <a href="/cwbriones">cwbriones</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@a12n" data-user="6066466" height="24" src="https://avatars1.githubusercontent.com/u/6066466?v=3&amp;s=48" width="24" />
-            <a href="/a12n">a12n</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@andrzejsliwa" data-user="9280" height="24" src="https://avatars3.githubusercontent.com/u/9280?v=3&amp;s=48" width="24" />
-            <a href="/andrzejsliwa">andrzejsliwa</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@andreineculau" data-user="708161" height="24" src="https://avatars3.githubusercontent.com/u/708161?v=3&amp;s=48" width="24" />
-            <a href="/andreineculau">andreineculau</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@zuiderkwast" data-user="273886" height="24" src="https://avatars1.githubusercontent.com/u/273886?v=3&amp;s=48" width="24" />
-            <a href="/zuiderkwast">zuiderkwast</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@asabil" data-user="373231" height="24" src="https://avatars1.githubusercontent.com/u/373231?v=3&amp;s=48" width="24" />
-            <a href="/asabil">asabil</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@ahf" data-user="36521" height="24" src="https://avatars1.githubusercontent.com/u/36521?v=3&amp;s=48" width="24" />
-            <a href="/ahf">ahf</a>
-          </li>
-          <li class="facebox-user-list-item">
-            <img alt="@yamt" data-user="1845377" height="24" src="https://avatars1.githubusercontent.com/u/1845377?v=3&amp;s=48" width="24" />
-            <a href="/yamt">yamt</a>
-          </li>
-      </ul>
-    </div>
-  </div>
-
-<div class="file">
-  <div class="file-header">
-    <div class="file-actions">
-
-      <div class="btn-group">
-        <a href="/ninenines/erlang.mk/raw/master/erlang.mk" class="btn btn-sm " id="raw-url">Raw</a>
-          <a href="/ninenines/erlang.mk/blame/master/erlang.mk" class="btn btn-sm js-update-url-with-hash">Blame</a>
-        <a href="/ninenines/erlang.mk/commits/master/erlang.mk" class="btn btn-sm " rel="nofollow">History</a>
-      </div>
-
-
-          <button type="button" class="octicon-btn disabled tooltipped tooltipped-n" aria-label="You must be signed in to make or propose changes">
-            <span class="octicon octicon-pencil"></span>
-          </button>
-
-        <button type="button" class="octicon-btn octicon-btn-danger disabled tooltipped tooltipped-n" aria-label="You must be signed in to make or propose changes">
-          <span class="octicon octicon-trashcan"></span>
-        </button>
-    </div>
-
-    <div class="file-info">
-        15 lines (11 sloc)
-        <span class="file-info-divider"></span>
-      0.444 kb
-    </div>
-  </div>
-  
-  <div class="blob-wrapper data type-makefile">
-      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
-      <tr>
-        <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"># Automated update.</span></td>
-      </tr>
-      <tr>
-        <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="LC2" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">ERLANG_MK_BUILD_CONFIG</span> ?= build.config</td>
-      </tr>
-      <tr>
-        <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">ERLANG_MK_BUILD_DIR</span> ?= .erlang.mk.build</td>
-      </tr>
-      <tr>
-        <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="LC5" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-en">erlang.mk</span>: bootstrap</td>
-      </tr>
-      <tr>
-        <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="LC7" class="blob-code blob-code-inner js-file-line">	git clone https://github.com/ninenines/erlang.mk <span class="pl-s">$(<span class="pl-smi">ERLANG_MK_BUILD_DIR</span>)</span></td>
-      </tr>
-      <tr>
-        <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
-        <td id="LC8" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">if</span> [ -f <span class="pl-s"><span class="pl-pds">$(</span>ERLANG_MK_BUILD_CONFIG<span class="pl-pds">)</span></span> ]<span class="pl-k">;</span> <span class="pl-k">then</span> cp <span class="pl-s"><span class="pl-pds">$(</span>ERLANG_MK_BUILD_CONFIG<span class="pl-pds">)</span></span> <span class="pl-s"><span class="pl-pds">$(</span>ERLANG_MK_BUILD_DIR<span class="pl-pds">)</span></span><span class="pl-k">;</span> <span class="pl-k">fi</span></td>
-      </tr>
-      <tr>
-        <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
-        <td id="LC9" class="blob-code blob-code-inner js-file-line">	<span class="pl-c1">cd</span> <span class="pl-s">$(<span class="pl-smi">ERLANG_MK_BUILD_DIR</span>)</span> <span class="pl-k">&amp;&amp;</span> <span class="pl-s">$(<span class="pl-v">MAKE</span>)</span></td>
-      </tr>
-      <tr>
-        <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="LC10" class="blob-code blob-code-inner js-file-line">	cp <span class="pl-s">$(<span class="pl-smi">ERLANG_MK_BUILD_DIR</span>)</span>/erlang.mk ./erlang.mk</td>
-      </tr>
-      <tr>
-        <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
-        <td id="LC11" class="blob-code blob-code-inner js-file-line">	rm -rf <span class="pl-s">$(<span class="pl-smi">ERLANG_MK_BUILD_DIR</span>)</span></td>
-      </tr>
-      <tr>
-        <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
-        <td id="LC12" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
-        <td id="LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">.PHONY</span>: bootstrap</td>
-      </tr>
-      <tr>
-        <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
-        <td id="LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-en">bootstrap</span>: ;</td>
-      </tr>
-</table>
-
-  </div>
-
-</div>
-
-<a href="#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" style="display:none">Jump to Line</a>
-<div id="jump-to-line" style="display:none">
-  <form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-    <input class="linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" autofocus>
-    <button type="submit" class="btn">Go</button>
-</form></div>
-
-        </div>
-
-      </div><!-- /.repo-container -->
-      <div class="modal-backdrop"></div>
-    </div><!-- /.container -->
-  </div><!-- /.site -->
-
-
-    </div><!-- /.wrapper -->
-
-      <div class="container">
-  <div class="site-footer" role="contentinfo">
-    <ul class="site-footer-links right">
-        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
-      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
-      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
-      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
-        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
-        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
-
-    </ul>
-
-    <a href="https://github.com" aria-label="Homepage">
-      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-</a>
-    <ul class="site-footer-links">
-      <li>&copy; 2015 <span title="0.03179s from github-fe122-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
-        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
-        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
-        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
-        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
-    </ul>
-  </div>
-</div>
-
-
-    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
-  <div class="fullscreen-container js-suggester-container">
-    <div class="textarea-wrap">
-      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder=""></textarea>
-      <div class="suggester-container">
-        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
-      </div>
-    </div>
-  </div>
-  <div class="fullscreen-sidebar">
-    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
-      <span class="mega-octicon octicon-screen-normal"></span>
-    </a>
-    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w"
-      aria-label="Switch themes">
-      <span class="octicon octicon-color-mode"></span>
-    </a>
-  </div>
-</div>
-
-
-
-    
-
-    <div id="ajax-error-message" class="flash flash-error">
-      <span class="octicon octicon-alert"></span>
-      <a href="#" class="octicon octicon-x flash-close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
-      Something went wrong with that request. Please try again.
-    </div>
-
-
-      <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-447ce66a36506ebddc8e84b4e32a77f6062f3d3482e77dd21a77a01f0643ad98.js"></script>
-      <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github/index-83be60956d0d00076a726f0864b49916aae8e7bc6ee140798791be0b6644d661.js"></script>
-      
-      
-  </body>
-</html>
-
+# Copyright (c) 2013-2015, Loïc Hoguin <essen@ninenines.eu>
+#
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+.PHONY: all deps app rel docs install-docs tests check clean distclean help erlang-mk
+
+ERLANG_MK_VERSION = 1.2.0-515-g7dc8c4f
+
+# Core configuration.
+
+PROJECT ?= $(notdir $(CURDIR))
+PROJECT := $(strip $(PROJECT))
+
+# Verbosity.
+
+V ?= 0
+
+gen_verbose_0 = @echo " GEN   " $@;
+gen_verbose = $(gen_verbose_$(V))
+
+# Temporary files directory.
+
+ERLANG_MK_TMP ?= $(CURDIR)/.erlang.mk
+export ERLANG_MK_TMP
+
+# "erl" command.
+
+ERL = erl +A0 -noinput -boot start_clean
+
+# Platform detection.
+# @todo Add Windows/Cygwin detection eventually.
+
+ifeq ($(PLATFORM),)
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S),Linux)
+PLATFORM = linux
+else ifeq ($(UNAME_S),Darwin)
+PLATFORM = darwin
+else ifeq ($(UNAME_S),SunOS)
+PLATFORM = solaris
+else ifeq ($(UNAME_S),GNU)
+PLATFORM = gnu
+else ifeq ($(UNAME_S),FreeBSD)
+PLATFORM = freebsd
+else ifeq ($(UNAME_S),NetBSD)
+PLATFORM = netbsd
+else ifeq ($(UNAME_S),OpenBSD)
+PLATFORM = openbsd
+else
+$(error Unable to detect platform. Please open a ticket with the output of uname -a.)
+endif
+
+export PLATFORM
+endif
+
+# Core targets.
+
+ifneq ($(words $(MAKECMDGOALS)),1)
+.NOTPARALLEL:
+endif
+
+all:: deps
+	@$(MAKE) --no-print-directory app
+	@$(MAKE) --no-print-directory rel
+
+# Noop to avoid a Make warning when there's nothing to do.
+rel::
+	@echo -n
+
+check:: clean app tests
+
+clean:: clean-crashdump
+
+clean-crashdump:
+ifneq ($(wildcard erl_crash.dump),)
+	$(gen_verbose) rm -f erl_crash.dump
+endif
+
+distclean:: clean
+
+help::
+	@printf "%s\n" \
+		"erlang.mk (version $(ERLANG_MK_VERSION)) is distributed under the terms of the ISC License." \
+		"Copyright (c) 2013-2014 Loïc Hoguin <essen@ninenines.eu>" \
+		"" \
+		"Usage: [V=1] $(MAKE) [-jNUM] [target]" \
+		"" \
+		"Core targets:" \
+		"  all           Run deps, app and rel targets in that order" \
+		"  deps          Fetch dependencies (if needed) and compile them" \
+		"  app           Compile the project" \
+		"  rel           Build a release for this project, if applicable" \
+		"  docs          Build the documentation for this project" \
+		"  install-docs  Install the man pages for this project" \
+		"  tests         Run the tests for this project" \
+		"  check         Compile and run all tests and analysis for this project" \
+		"  clean         Delete temporary and output files from most targets" \
+		"  distclean     Delete all temporary and output files" \
+		"  help          Display this help and exit" \
+		"" \
+		"The target clean only removes files that are commonly removed." \
+		"Dependencies and releases are left untouched." \
+		"" \
+		"Setting V=1 when calling $(MAKE) enables verbose mode." \
+		"Parallel execution is supported through the -j $(MAKE) flag."
+
+# Core functions.
+
+define newline
+
+
+endef
+
+# Adding erlang.mk to make Erlang scripts who call init:get_plain_arguments() happy.
+define erlang
+$(ERL) -pa $(ERLANG_MK_TMP)/ebin -eval "$(subst $(newline),,$(subst ",\",$(1)))" -- erlang.mk
+endef
+
+ifeq ($(shell which wget 2>/dev/null | wc -l), 1)
+define core_http_get
+	wget --no-check-certificate -O $(1) $(2)|| rm $(1)
+endef
+else
+define core_http_get.erl
+	ssl:start(),
+	inets:start(),
+	case httpc:request(get, {"$(2)", []}, [{autoredirect, true}], []) of
+		{ok, {{_, 200, _}, _, Body}} ->
+			case file:write_file("$(1)", Body) of
+				ok -> ok;
+				{error, R1} -> halt(R1)
+			end;
+		{error, R2} ->
+			halt(R2)
+	end,
+	halt(0).
+endef
+
+define core_http_get
+	$(call erlang,$(call core_http_get.erl,$(1),$(2)))
+endef
+endif
+
+# Automated update.
+
+ERLANG_MK_BUILD_CONFIG ?= build.config
+ERLANG_MK_BUILD_DIR ?= .erlang.mk.build
+
+erlang-mk:
+	git clone https://github.com/ninenines/erlang.mk $(ERLANG_MK_BUILD_DIR)
+	if [ -f $(ERLANG_MK_BUILD_CONFIG) ]; then cp $(ERLANG_MK_BUILD_CONFIG) $(ERLANG_MK_BUILD_DIR); fi
+	cd $(ERLANG_MK_BUILD_DIR) && $(MAKE)
+	cp $(ERLANG_MK_BUILD_DIR)/erlang.mk ./erlang.mk
+	rm -rf $(ERLANG_MK_BUILD_DIR)
+
+# Copyright (c) 2013-2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: distclean-deps distclean-pkg pkg-list pkg-search
+
+# Configuration.
+
+IGNORE_DEPS ?=
+
+DEPS_DIR ?= $(CURDIR)/deps
+export DEPS_DIR
+
+REBAR_DEPS_DIR = $(DEPS_DIR)
+export REBAR_DEPS_DIR
+
+ALL_DEPS_DIRS = $(addprefix $(DEPS_DIR)/,$(filter-out $(IGNORE_DEPS),$(DEPS)))
+
+ifeq ($(filter $(DEPS_DIR),$(subst :, ,$(ERL_LIBS))),)
+ifeq ($(ERL_LIBS),)
+	ERL_LIBS = $(DEPS_DIR)
+else
+	ERL_LIBS := $(ERL_LIBS):$(DEPS_DIR)
+endif
+endif
+export ERL_LIBS
+
+PKG_FILE2 ?= $(CURDIR)/.erlang.mk.packages.v2
+export PKG_FILE2
+
+PKG_FILE_URL ?= https://raw.githubusercontent.com/ninenines/erlang.mk/master/packages.v2.tsv
+
+# Verbosity.
+
+dep_verbose_0 = @echo " DEP   " $(1);
+dep_verbose = $(dep_verbose_$(V))
+
+# Core targets.
+
+ifneq ($(SKIP_DEPS),)
+deps::
+else
+deps:: $(ALL_DEPS_DIRS)
+	@for dep in $(ALL_DEPS_DIRS) ; do \
+		if [ -f $$dep/GNUmakefile ] || [ -f $$dep/makefile ] || [ -f $$dep/Makefile ] ; then \
+			$(MAKE) -C $$dep IS_DEP=1 || exit $$? ; \
+		else \
+			echo "ERROR: No Makefile to build dependency $$dep." ; \
+			exit 1 ; \
+		fi ; \
+	done
+endif
+
+distclean:: distclean-deps distclean-pkg
+
+# Deps related targets.
+
+# @todo rename GNUmakefile and makefile into Makefile first, if they exist
+# While Makefile file could be GNUmakefile or makefile,
+# in practice only Makefile is needed so far.
+define dep_autopatch
+	if [ -f $(DEPS_DIR)/$(1)/Makefile ]; then \
+		if [ 0 != `grep -c "include ../\w*\.mk" $(DEPS_DIR)/$(1)/Makefile` ]; then \
+			$(call dep_autopatch2,$(1)); \
+		elif [ 0 != `grep -ci rebar $(DEPS_DIR)/$(1)/Makefile` ]; then \
+			$(call dep_autopatch2,$(1)); \
+		elif [ 0 != `find $(DEPS_DIR)/$(1)/ -type f -name \*.mk -not -name erlang.mk | xargs grep -ci rebar` ]; then \
+			$(call dep_autopatch2,$(1)); \
+		else \
+			if [ -f $(DEPS_DIR)/$(1)/erlang.mk ]; then \
+				$(call erlang,$(call dep_autopatch_appsrc.erl,$(1))); \
+				$(call dep_autopatch_erlang_mk,$(1)); \
+			else \
+				$(call erlang,$(call dep_autopatch_app.erl,$(1))); \
+			fi \
+		fi \
+	else \
+		if [ ! -d $(DEPS_DIR)/$(1)/src/ ]; then \
+			$(call dep_autopatch_noop,$(1)); \
+		else \
+			$(call dep_autopatch2,$(1)); \
+		fi \
+	fi
+endef
+
+define dep_autopatch2
+	$(call erlang,$(call dep_autopatch_appsrc.erl,$(1))); \
+	if [ -f $(DEPS_DIR)/$(1)/rebar.config -o -f $(DEPS_DIR)/$(1)/rebar.config.script ]; then \
+		$(call dep_autopatch_rebar_utils); \
+		$(call dep_autopatch_rebar,$(1)); \
+	else \
+		$(call dep_autopatch_gen,$(1)); \
+	fi
+endef
+
+define dep_autopatch_noop
+	printf "noop:\n" > $(DEPS_DIR)/$(1)/Makefile
+endef
+
+# Overwrite erlang.mk with the current file by default.
+ifeq ($(NO_AUTOPATCH_ERLANG_MK),)
+define dep_autopatch_erlang_mk
+	rm -f $(DEPS_DIR)/$(1)/erlang.mk; \
+	cd $(DEPS_DIR)/$(1)/ && ln -s ../../erlang.mk
+endef
+else
+define dep_autopatch_erlang_mk
+	echo -n
+endef
+endif
+
+define dep_autopatch_gen
+	printf "%s\n" \
+		"ERLC_OPTS = +debug_info" \
+		"include ../../erlang.mk" > $(DEPS_DIR)/$(1)/Makefile
+endef
+
+define dep_autopatch_rebar_utils
+	mkdir -p $(ERLANG_MK_TMP)/ebin; \
+	if [ ! -f $(ERLANG_MK_TMP)/rebar.hrl ]; then \
+		$(call core_http_get,$(ERLANG_MK_TMP)/rebar.hrl,https://raw.githubusercontent.com/rebar/rebar/791db716b5a3a7671e0b351f95ddf24b848ee173/include/rebar.hrl); \
+	fi; \
+	if [ ! -f $(ERLANG_MK_TMP)/rebar_utils.erl ]; then \
+		$(call core_http_get,$(ERLANG_MK_TMP)/rebar_utils.erl,https://raw.githubusercontent.com/rebar/rebar/791db716b5a3a7671e0b351f95ddf24b848ee173/src/rebar_utils.erl); \
+	fi; \
+	if [ ! -f $(ERLANG_MK_TMP)/ebin/rebar_utils.beam ]; then \
+		erlc -o $(ERLANG_MK_TMP)/ebin $(ERLANG_MK_TMP)/rebar_utils.erl; \
+	fi; \
+	if [ ! -f $(ERLANG_MK_TMP)/rebar_log.erl ]; then \
+		$(call core_http_get,$(ERLANG_MK_TMP)/rebar_log.erl,https://raw.githubusercontent.com/rebar/rebar/791db716b5a3a7671e0b351f95ddf24b848ee173/src/rebar_log.erl); \
+	fi; \
+	if [ ! -f $(ERLANG_MK_TMP)/ebin/rebar_log.beam ]; then \
+		erlc -o $(ERLANG_MK_TMP)/ebin $(ERLANG_MK_TMP)/rebar_log.erl; \
+	fi
+endef
+
+define dep_autopatch_rebar
+	if [ -f $(DEPS_DIR)/$(1)/Makefile ]; then \
+		mv $(DEPS_DIR)/$(1)/Makefile $(DEPS_DIR)/$(1)/Makefile.orig.mk; \
+	fi; \
+	$(call erlang,$(call dep_autopatch_rebar.erl,$(1)))
+endef
+
+define dep_autopatch_rebar.erl
+	application:set_env(rebar, log_level, debug),
+	Conf1 = case file:consult("$(DEPS_DIR)/$(1)/rebar.config") of
+		{ok, Conf0} -> Conf0;
+		_ -> []
+	end,
+	{Conf, OsEnv} = fun() ->
+		case filelib:is_file("$(DEPS_DIR)/$(1)/rebar.config.script") of
+			false -> {Conf1, []};
+			true ->
+				Bindings0 = erl_eval:new_bindings(),
+				Bindings1 = erl_eval:add_binding('CONFIG', Conf1, Bindings0),
+				Bindings = erl_eval:add_binding('SCRIPT', "$(DEPS_DIR)/$(1)/rebar.config.script", Bindings1),
+				Before = os:getenv(),
+				{ok, Conf2} = file:script("$(DEPS_DIR)/$(1)/rebar.config.script", Bindings),
+				{Conf2, lists:foldl(fun(E, Acc) -> lists:delete(E, Acc) end, os:getenv(), Before)}
+		end
+	end(),
+	Write = fun (Text) ->
+		file:write_file("$(DEPS_DIR)/$(1)/Makefile", Text, [append])
+	end,
+	Escape = fun (Text) ->
+		re:replace(Text, "\\\\$$$$", "\$$$$$$$$", [global, {return, list}])
+	end,
+	Write("IGNORE_DEPS = edown eper eunit_formatters meck node_package "
+		"rebar_lock_deps_plugin rebar_vsn_plugin reltool_util\n"),
+	Write("C_SRC_DIR = /path/do/not/exist\n"),
+	Write("DRV_CFLAGS = -fPIC\nexport DRV_CFLAGS\n"),
+	Write(["ERLANG_ARCH = ", rebar_utils:wordsize(), "\nexport ERLANG_ARCH\n"]),
+	fun() ->
+		Write("ERLC_OPTS = +debug_info\n"),
+		case lists:keyfind(erl_opts, 1, Conf) of
+			false -> ok;
+			{_, ErlOpts} ->
+				lists:foreach(fun
+					({d, D}) ->
+						Write("ERLC_OPTS += -D" ++ atom_to_list(D) ++ "=1\n");
+					({i, I}) ->
+						Write(["ERLC_OPTS += -I ", I, "\n"]);
+					({platform_define, Regex, D}) ->
+						case rebar_utils:is_arch(Regex) of
+							true -> Write("ERLC_OPTS += -D" ++ atom_to_list(D) ++ "=1\n");
+							false -> ok
+						end;
+					({parse_transform, PT}) ->
+						Write("ERLC_OPTS += +'{parse_transform, " ++ atom_to_list(PT) ++ "}'\n");
+					(_) -> ok
+				end, ErlOpts)
+		end,
+		Write("\n")
+	end(),
+	fun() ->
+		File = case lists:keyfind(deps, 1, Conf) of
+			false -> [];
+			{_, Deps} ->
+				[begin case case Dep of
+							{N, S} when is_tuple(S) -> {N, S};
+							{N, _, S} -> {N, S};
+							{N, _, S, _} -> {N, S};
+							_ -> false
+						end of
+					false -> ok;
+					{Name, Source} ->
+						{Method, Repo, Commit} = case Source of
+							{git, R} -> {git, R, master};
+							{M, R, {branch, C}} -> {M, R, C};
+							{M, R, {tag, C}} -> {M, R, C};
+							{M, R, C} -> {M, R, C}
+						end,
+						Write(io_lib:format("DEPS += ~s\ndep_~s = ~s ~s ~s~n", [Name, Name, Method, Repo, Commit]))
+				end end || Dep <- Deps]
+		end
+	end(),
+	fun() ->
+		First = case lists:keyfind(erl_first_files, 1, Conf) of false -> []; {_, Files} ->
+			Names = [[" ", begin "lre." ++ Elif = lists:reverse(F), lists:reverse(Elif) end]
+				 || "src/" ++ F <- Files],
+			Write(io_lib:format("COMPILE_FIRST +=~s\n", [Names]))
+		end
+	end(),
+	FindFirst = fun(F, Fd) ->
+		case io:parse_erl_form(Fd, undefined) of
+			{ok, {attribute, _,compile, {parse_transform, PT}}, _} ->
+				[PT, F(F, Fd)];
+			{ok, {attribute, _, include, Hrl}, _} ->
+				case file:open("$(DEPS_DIR)/$(1)/include/" ++ Hrl, [read]) of
+					{ok, HrlFd} -> [F(F, HrlFd), F(F, Fd)];
+					_ ->
+						case file:open("$(DEPS_DIR)/$(1)/src/" ++ Hrl, [read]) of
+							{ok, HrlFd} -> [F(F, HrlFd), F(F, Fd)];
+							_ -> [F(F, Fd)]
+						end
+				end;
+			{ok, {attribute, _, include_lib, "$(1)/include/" ++ Hrl}, _} ->
+				{ok, HrlFd} = file:open("$(DEPS_DIR)/$(1)/include/" ++ Hrl, [read]),
+				[F(F, HrlFd), F(F, Fd)];
+			{ok, {attribute, _, import, {Imp, _}}, _} ->
+				case file:open("$(DEPS_DIR)/$(1)/src/" ++ atom_to_list(Imp) ++ ".erl", [read]) of
+					{ok, ImpFd} -> [Imp, F(F, ImpFd), F(F, Fd)];
+					_ -> [F(F, Fd)]
+				end;
+			{eof, _} ->
+				file:close(Fd),
+				[];
+			_ ->
+				F(F, Fd)
+		end
+	end,
+	fun() ->
+		ErlFiles = filelib:wildcard("$(DEPS_DIR)/$(1)/src/*.erl"),
+		First0 = lists:usort(lists:flatten([begin
+			{ok, Fd} = file:open(F, [read]),
+			FindFirst(FindFirst, Fd)
+		end || F <- ErlFiles])),
+		First = lists:flatten([begin
+			{ok, Fd} = file:open("$(DEPS_DIR)/$(1)/src/" ++ atom_to_list(M) ++ ".erl", [read]),
+			FindFirst(FindFirst, Fd)
+		end || M <- First0, lists:member("$(DEPS_DIR)/$(1)/src/" ++ atom_to_list(M) ++ ".erl", ErlFiles)]) ++ First0,
+		Write(["COMPILE_FIRST +=", [[" ", atom_to_list(M)] || M <- First,
+			lists:member("$(DEPS_DIR)/$(1)/src/" ++ atom_to_list(M) ++ ".erl", ErlFiles)], "\n"])
+	end(),
+	Write("\n\nrebar_dep: preprocess pre-deps deps pre-app app\n"),
+	Write("\npreprocess::\n"),
+	Write("\npre-deps::\n"),
+	Write("\npre-app::\n"),
+	PatchHook = fun(Cmd) ->
+		case Cmd of
+			"make -C" ++ _ -> Escape(Cmd);
+			"gmake -C" ++ _ -> Escape(Cmd);
+			"make " ++ Cmd1 -> "make -f Makefile.orig.mk " ++ Escape(Cmd1);
+			"gmake " ++ Cmd1 -> "gmake -f Makefile.orig.mk " ++ Escape(Cmd1);
+			_ -> Escape(Cmd)
+		end
+	end,
+	fun() ->
+		case lists:keyfind(pre_hooks, 1, Conf) of
+			false -> ok;
+			{_, Hooks} ->
+				[case H of
+					{'get-deps', Cmd} ->
+						Write("\npre-deps::\n\t" ++ PatchHook(Cmd) ++ "\n");
+					{compile, Cmd} ->
+						Write("\npre-app::\n\t" ++ PatchHook(Cmd) ++ "\n");
+					{Regex, compile, Cmd} ->
+						case rebar_utils:is_arch(Regex) of
+							true -> Write("\npre-app::\n\t" ++ PatchHook(Cmd) ++ "\n");
+							false -> ok
+						end;
+					_ -> ok
+				end || H <- Hooks]
+		end
+	end(),
+	ShellToMk = fun(V) ->
+		re:replace(re:replace(V, "(\\\\$$$$)(\\\\w*)", "\\\\1(\\\\2)", [global]),
+			"-Werror\\\\b", "", [{return, list}, global])
+	end,
+	PortSpecs = fun() ->
+		case lists:keyfind(port_specs, 1, Conf) of
+			false ->
+				case filelib:is_dir("$(DEPS_DIR)/$(1)/c_src") of
+					false -> [];
+					true ->
+						[{"priv/" ++ proplists:get_value(so_name, Conf, "$(1)_drv.so"),
+							proplists:get_value(port_sources, Conf, ["c_src/*.c"]), []}]
+				end;
+			{_, Specs} ->
+				lists:flatten([case S of
+					{Output, Input} -> {ShellToMk(Output), Input, []};
+					{Regex, Output, Input} ->
+						case rebar_utils:is_arch(Regex) of
+							true -> {ShellToMk(Output), Input, []};
+							false -> []
+						end;
+					{Regex, Output, Input, [{env, Env}]} ->
+						case rebar_utils:is_arch(Regex) of
+							true -> {ShellToMk(Output), Input, Env};
+							false -> []
+						end
+				end || S <- Specs])
+		end
+	end(),
+	PortSpecWrite = fun (Text) ->
+		file:write_file("$(DEPS_DIR)/$(1)/c_src/Makefile.erlang.mk", Text, [append])
+	end,
+	case PortSpecs of
+		[] -> ok;
+		_ ->
+			Write("\npre-app::\n\t$$$$\(MAKE) -f c_src/Makefile.erlang.mk\n"),
+			PortSpecWrite(io_lib:format("ERL_CFLAGS = -finline-functions -Wall -fPIC -I ~s/erts-~s/include -I ~s\n",
+				[code:root_dir(), erlang:system_info(version), code:lib_dir(erl_interface, include)])),
+			PortSpecWrite(io_lib:format("ERL_LDFLAGS = -L ~s -lerl_interface -lei\n",
+				[code:lib_dir(erl_interface, lib)])),
+			[PortSpecWrite(["\n", E, "\n"]) || E <- OsEnv],
+			FilterEnv = fun(Env) ->
+				lists:flatten([case E of
+					{_, _} -> E;
+					{Regex, K, V} ->
+						case rebar_utils:is_arch(Regex) of
+							true -> {K, V};
+							false -> []
+						end
+				end || E <- Env])
+			end,
+			MergeEnv = fun(Env) ->
+				lists:foldl(fun ({K, V}, Acc) ->
+					case lists:keyfind(K, 1, Acc) of
+						false -> [{K, rebar_utils:expand_env_variable(V, K, "")}|Acc];
+						{_, V0} -> [{K, rebar_utils:expand_env_variable(V, K, V0)}|Acc]
+					end
+				end, [], Env)
+			end,
+			PortEnv = case lists:keyfind(port_env, 1, Conf) of
+				false -> [];
+				{_, PortEnv0} -> FilterEnv(PortEnv0)
+			end,
+			PortSpec = fun ({Output, Input0, Env}) ->
+				filelib:ensure_dir("$(DEPS_DIR)/$(1)/" ++ Output),
+				Input = [[" ", I] || I <- Input0],
+				PortSpecWrite([
+					[["\n", K, " = ", ShellToMk(V)] || {K, V} <- lists:reverse(MergeEnv(PortEnv))],
+					"\n\nall:: ", Output, "\n\n",
+					"%.o: %.c\n\t$$$$\(CC) -c -o $$$$\@ $$$$\< $$$$\(CFLAGS) $$$$\(ERL_CFLAGS) $$$$\(DRV_CFLAGS) $$$$\(EXE_CFLAGS)\n\n",
+					"%.o: %.C\n\t$$$$\(CXX) -c -o $$$$\@ $$$$\< $$$$\(CXXFLAGS) $$$$\(ERL_CFLAGS) $$$$\(DRV_CFLAGS) $$$$\(EXE_CFLAGS)\n\n",
+					"%.o: %.cc\n\t$$$$\(CXX) -c -o $$$$\@ $$$$\< $$$$\(CXXFLAGS) $$$$\(ERL_CFLAGS) $$$$\(DRV_CFLAGS) $$$$\(EXE_CFLAGS)\n\n",
+					"%.o: %.cpp\n\t$$$$\(CXX) -c -o $$$$\@ $$$$\< $$$$\(CXXFLAGS) $$$$\(ERL_CFLAGS) $$$$\(DRV_CFLAGS) $$$$\(EXE_CFLAGS)\n\n",
+					[[Output, ": ", K, " = ", ShellToMk(V), "\n"] || {K, V} <- lists:reverse(MergeEnv(FilterEnv(Env)))],
+					Output, ": $$$$\(foreach ext,.c .C .cc .cpp,",
+						"$$$$\(patsubst %$$$$\(ext),%.o,$$$$\(filter %$$$$\(ext),$$$$\(wildcard", Input, "))))\n",
+					"\t$$$$\(CC) -o $$$$\@ $$$$\? $$$$\(LDFLAGS) $$$$\(ERL_LDFLAGS) $$$$\(DRV_LDFLAGS) $$$$\(EXE_LDFLAGS)",
+					case filename:extension(Output) of
+						[] -> "\n";
+						_ -> " -shared\n"
+					end])
+			end,
+			[PortSpec(S) || S <- PortSpecs]
+	end,
+	Write("\ninclude ../../erlang.mk"),
+	PatchPlugin = fun(ErlFile) ->
+		{ok, F0} = file:read_file(ErlFile),
+		case re:replace(F0, "rebar_config:", "rebar_config_", [global]) of
+			F0 -> ok;
+			F ->
+				ok = file:write_file(ErlFile, [F,
+					"\nrebar_config_get(_, current_command, _) -> compile.\n"
+				])
+		end
+	end,
+	RunPlugin = fun(Plugin, Step) ->
+		case erlang:function_exported(Plugin, Step, 2) of
+			false -> ok;
+			true ->
+				c:cd("$(DEPS_DIR)/$(1)/"),
+				Ret = Plugin:Step(Conf, undefined),
+				io:format("rebar plugin ~p step ~p ret ~p~n", [Plugin, Step, Ret])
+		end
+	end,
+	fun() ->
+		case lists:keyfind(plugins, 1, Conf) of
+			false -> ok;
+			{_, Plugins} ->
+				[begin
+					case lists:keyfind(deps, 1, Conf) of
+						false -> ok;
+						{_, Deps} ->
+							case lists:keyfind(P, 1, Deps) of
+								false -> ok;
+								_ ->
+									Path = "$(DEPS_DIR)/" ++ atom_to_list(P),
+									io:format("~s", [os:cmd("$(MAKE) -C $(DEPS_DIR)/$(1) " ++ Path)]),
+									io:format("~s", [os:cmd("$(MAKE) -C " ++ Path ++ " IS_DEP=1")]),
+									code:add_patha(Path ++ "/ebin")
+							end
+					end
+				end || P <- Plugins],
+				[case code:load_file(P) of
+					{module, P} -> ok;
+					_ ->
+						case lists:keyfind(plugin_dir, 1, Conf) of
+							false -> ok;
+							{_, PluginsDir} ->
+								ErlFile = "$(DEPS_DIR)/$(1)/" ++ PluginsDir ++ "/" ++ atom_to_list(P) ++ ".erl",
+								PatchPlugin(ErlFile),
+								{ok, P, Bin} = compile:file(ErlFile, [binary]),
+								{module, P} = code:load_binary(P, ErlFile, Bin)
+						end
+				end || P <- Plugins],
+				[RunPlugin(P, preprocess) || P <- Plugins],
+				[RunPlugin(P, pre_compile) || P <- Plugins]
+		end
+	end(),
+	halt()
+endef
+
+define dep_autopatch_app.erl
+	UpdateModules = fun(App) ->
+		case filelib:is_regular(App) of
+			false -> ok;
+			true ->
+				{ok, [{application, $(1), L0}]} = file:consult(App),
+				Mods = filelib:fold_files("$(DEPS_DIR)/$(1)/src", "\\\\.erl$$$$", true,
+					fun (F, Acc) -> [list_to_atom(filename:rootname(filename:basename(F)))|Acc] end, []),
+				L = lists:keystore(modules, 1, L0, {modules, Mods}),
+				ok = file:write_file(App, io_lib:format("~p.~n", [{application, $(1), L}]))
+		end
+	end,
+	UpdateModules("$(DEPS_DIR)/$(1)/ebin/$(1).app"),
+	halt()
+endef
+
+define dep_autopatch_appsrc.erl
+	AppSrcOut = "$(DEPS_DIR)/$(1)/src/$(1).app.src",
+	AppSrcIn = case filelib:is_regular(AppSrcOut) of false -> "$(DEPS_DIR)/$(1)/ebin/$(1).app"; true -> AppSrcOut end,
+	case filelib:is_regular(AppSrcIn) of
+		false -> ok;
+		true ->
+			{ok, [{application, $(1), L0}]} = file:consult(AppSrcIn),
+			L1 = lists:keystore(modules, 1, L0, {modules, []}),
+			L2 = case lists:keyfind(vsn, 1, L1) of {vsn, git} -> lists:keyreplace(vsn, 1, L1, {vsn, "git"}); _ -> L1 end,
+			ok = file:write_file(AppSrcOut, io_lib:format("~p.~n", [{application, $(1), L2}])),
+			case AppSrcOut of AppSrcIn -> ok; _ -> ok = file:delete(AppSrcIn) end
+	end,
+	halt()
+endef
+
+define dep_fetch
+	if [ "$$$$VS" = "git" ]; then \
+		git clone -q -n -- $$$$REPO $(DEPS_DIR)/$(1); \
+		cd $(DEPS_DIR)/$(1) && git checkout -q $$$$COMMIT; \
+	elif [ "$$$$VS" = "hg" ]; then \
+		hg clone -q -U $$$$REPO $(DEPS_DIR)/$(1); \
+		cd $(DEPS_DIR)/$(1) && hg update -q $$$$COMMIT; \
+	elif [ "$$$$VS" = "svn" ]; then \
+		svn checkout -q $$$$REPO $(DEPS_DIR)/$(1); \
+	elif [ "$$$$VS" = "cp" ]; then \
+		cp -R $$$$REPO $(DEPS_DIR)/$(1); \
+	else \
+		echo "Unknown or invalid dependency: $(1). Please consult the erlang.mk README for instructions." >&2; \
+		exit 78; \
+	fi
+endef
+
+define dep_target
+$(DEPS_DIR)/$(1):
+	@mkdir -p $(DEPS_DIR)
+ifeq (,$(dep_$(1)))
+	@if [ ! -f $(PKG_FILE2) ]; then $(call core_http_get,$(PKG_FILE2),$(PKG_FILE_URL)); fi
+	$(dep_verbose) DEPPKG=$$$$(awk 'BEGIN { FS = "\t" }; $$$$1 == "$(1)" { print $$$$2 " " $$$$3 " " $$$$4 }' $(PKG_FILE2);); \
+	VS=$$$$(echo $$$$DEPPKG | cut -d " " -f1); \
+	REPO=$$$$(echo $$$$DEPPKG | cut -d " " -f2); \
+	COMMIT=$$$$(echo $$$$DEPPKG | cut -d " " -f3); \
+	$(call dep_fetch,$(1))
+else
+ifeq (1,$(words $(dep_$(1))))
+	$(dep_verbose) VS=git; \
+	REPO=$(dep_$(1)); \
+	COMMIT=master; \
+	$(call dep_fetch,$(1))
+else
+ifeq (2,$(words $(dep_$(1))))
+	$(dep_verbose) VS=git; \
+	REPO=$(word 1,$(dep_$(1))); \
+	COMMIT=$(word 2,$(dep_$(1))); \
+	$(call dep_fetch,$(1))
+else
+	$(dep_verbose) VS=$(word 1,$(dep_$(1))); \
+	REPO=$(word 2,$(dep_$(1))); \
+	COMMIT=$(word 3,$(dep_$(1))); \
+	$(call dep_fetch,$(1))
+endif
+endif
+endif
+	@if [ -f $(DEPS_DIR)/$(1)/configure.ac ]; then \
+		echo " AUTO  " $(1); \
+		cd $(DEPS_DIR)/$(1) && autoreconf -vif; \
+	fi
+	-@if [ -f $(DEPS_DIR)/$(1)/configure ]; then \
+		echo " CONF  " $(1); \
+		cd $(DEPS_DIR)/$(1) && ./configure; \
+	fi
+ifeq ($(filter $(1),$(NO_AUTOPATCH)),)
+	@$(call dep_autopatch,$(1))
+endif
+endef
+
+$(foreach dep,$(DEPS),$(eval $(call dep_target,$(dep))))
+
+distclean-deps:
+	$(gen_verbose) rm -rf $(DEPS_DIR)
+
+# Packages related targets.
+
+$(PKG_FILE2):
+	@$(call core_http_get,$(PKG_FILE2),$(PKG_FILE_URL))
+
+pkg-list: $(PKG_FILE2)
+	@cat $(PKG_FILE2) | awk 'BEGIN { FS = "\t" }; { print \
+		"Name:\t\t" $$1 "\n" \
+		"Repository:\t" $$3 "\n" \
+		"Website:\t" $$5 "\n" \
+		"Description:\t" $$6 "\n" }'
+
+ifdef q
+pkg-search: $(PKG_FILE2)
+	@cat $(PKG_FILE2) | grep -i ${q} | awk 'BEGIN { FS = "\t" }; { print \
+		"Name:\t\t" $$1 "\n" \
+		"Repository:\t" $$3 "\n" \
+		"Website:\t" $$5 "\n" \
+		"Description:\t" $$6 "\n" }'
+else
+pkg-search:
+	$(error Usage: $(MAKE) pkg-search q=STRING)
+endif
+
+ifeq ($(PKG_FILE2),$(CURDIR)/.erlang.mk.packages.v2)
+distclean-pkg:
+	$(gen_verbose) rm -f $(PKG_FILE2)
+endif
+
+help::
+	@printf "%s\n" "" \
+		"Package-related targets:" \
+		"  pkg-list              List all known packages" \
+		"  pkg-search q=STRING   Search for STRING in the package index"
+
+# Copyright (c) 2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+# Verbosity.
+
+proto_verbose_0 = @echo " PROTO " $(filter %.proto,$(?F));
+proto_verbose = $(proto_verbose_$(V))
+
+# Core targets.
+
+define compile_proto
+	@mkdir -p ebin/ include/
+	$(proto_verbose) $(call erlang,$(call compile_proto.erl,$(1)))
+	$(proto_verbose) erlc +debug_info -o ebin/ ebin/*.erl
+	@rm ebin/*.erl
+endef
+
+define compile_proto.erl
+	[begin
+		Dir = filename:dirname(filename:dirname(F)),
+		protobuffs_compile:generate_source(F,
+			[{output_include_dir, Dir ++ "/include"},
+				{output_src_dir, Dir ++ "/ebin"}])
+	end || F <- string:tokens("$(1)", " ")],
+	halt().
+endef
+
+ifneq ($(wildcard src/),)
+ebin/$(PROJECT).app:: $(shell find src -type f -name \*.proto 2>/dev/null)
+	$(if $(strip $?),$(call compile_proto,$?))
+endif
+
+# Copyright (c) 2013-2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: clean-app
+
+# Configuration.
+
+ERLC_OPTS ?= -Werror +debug_info +warn_export_vars +warn_shadow_vars \
+	+warn_obsolete_guard # +bin_opt_info +warn_export_all +warn_missing_spec
+COMPILE_FIRST ?=
+COMPILE_FIRST_PATHS = $(addprefix src/,$(addsuffix .erl,$(COMPILE_FIRST)))
+ERLC_EXCLUDE ?=
+ERLC_EXCLUDE_PATHS = $(addprefix src/,$(addsuffix .erl,$(ERLC_EXCLUDE)))
+
+ERLC_MIB_OPTS ?=
+COMPILE_MIB_FIRST ?=
+COMPILE_MIB_FIRST_PATHS = $(addprefix mibs/,$(addsuffix .mib,$(COMPILE_MIB_FIRST)))
+
+# Verbosity.
+
+appsrc_verbose_0 = @echo " APP   " $(PROJECT).app.src;
+appsrc_verbose = $(appsrc_verbose_$(V))
+
+erlc_verbose_0 = @echo " ERLC  " $(filter-out $(patsubst %,%.erl,$(ERLC_EXCLUDE)),\
+	$(filter %.erl %.core,$(?F)));
+erlc_verbose = $(erlc_verbose_$(V))
+
+xyrl_verbose_0 = @echo " XYRL  " $(filter %.xrl %.yrl,$(?F));
+xyrl_verbose = $(xyrl_verbose_$(V))
+
+asn1_verbose_0 = @echo " ASN1  " $(filter %.asn1,$(?F));
+asn1_verbose = $(asn1_verbose_$(V))
+
+mib_verbose_0 = @echo " MIB   " $(filter %.bin %.mib,$(?F));
+mib_verbose = $(mib_verbose_$(V))
+
+# Targets.
+
+ifeq ($(wildcard ebin/test),)
+app:: app-build
+else
+app:: clean app-build
+endif
+
+app-build: erlc-include ebin/$(PROJECT).app
+	$(eval MODULES := $(shell find ebin -type f -name \*.beam \
+		| sed "s/ebin\//'/;s/\.beam/',/" | sed '$$s/.$$//'))
+	@if [ -z "$$(grep -E '^[^%]*{modules,' src/$(PROJECT).app.src)" ]; then \
+		echo "Empty modules entry not found in $(PROJECT).app.src. Please consult the erlang.mk README for instructions." >&2; \
+		exit 1; \
+	fi
+	$(eval GITDESCRIBE := $(shell git describe --dirty --abbrev=7 --tags --always --first-parent 2>/dev/null || true))
+	$(appsrc_verbose) cat src/$(PROJECT).app.src \
+		| sed "s/{modules,[[:space:]]*\[\]}/{modules, \[$(MODULES)\]}/" \
+		| sed "s/{id,[[:space:]]*\"git\"}/{id, \"$(GITDESCRIBE)\"}/" \
+		> ebin/$(PROJECT).app
+
+erlc-include:
+	-@if [ -d ebin/ ]; then \
+		find include/ src/ -type f -name \*.hrl -newer ebin -exec touch $(shell find src/ -type f -name "*.erl") \; 2>/dev/null || printf ''; \
+	fi
+
+define compile_erl
+	$(erlc_verbose) erlc -v $(ERLC_OPTS) -o ebin/ \
+		-pa ebin/ -I include/ $(filter-out $(ERLC_EXCLUDE_PATHS),\
+		$(COMPILE_FIRST_PATHS) $(1))
+endef
+
+define compile_xyrl
+	$(xyrl_verbose) erlc -v -o ebin/ $(1)
+	$(xyrl_verbose) erlc $(ERLC_OPTS) -o ebin/ ebin/*.erl
+	@rm ebin/*.erl
+endef
+
+define compile_asn1
+	$(asn1_verbose) erlc -v -I include/ -o ebin/ $(1)
+	@mv ebin/*.hrl include/
+	@mv ebin/*.asn1db include/
+	@rm ebin/*.erl
+endef
+
+define compile_mib
+	$(mib_verbose) erlc -v $(ERLC_MIB_OPTS) -o priv/mibs/ \
+		-I priv/mibs/ $(COMPILE_MIB_FIRST_PATHS) $(1)
+	$(mib_verbose) erlc -o include/ -- priv/mibs/*.bin
+endef
+
+ifneq ($(wildcard src/),)
+ebin/$(PROJECT).app::
+	@mkdir -p ebin/
+
+ifneq ($(wildcard asn1/),)
+ebin/$(PROJECT).app:: $(shell find asn1 -type f -name \*.asn1)
+	@mkdir -p include
+	$(if $(strip $?),$(call compile_asn1,$?))
+endif
+
+ifneq ($(wildcard mibs/),)
+ebin/$(PROJECT).app:: $(shell find mibs -type f -name \*.mib)
+	@mkdir -p priv/mibs/ include
+	$(if $(strip $?),$(call compile_mib,$?))
+endif
+
+ebin/$(PROJECT).app:: $(shell find src -type f -name \*.erl -o -name \*.core)
+	$(if $(strip $?),$(call compile_erl,$?))
+
+ebin/$(PROJECT).app:: $(shell find src -type f -name \*.xrl -o -name \*.yrl)
+	$(if $(strip $?),$(call compile_xyrl,$?))
+endif
+
+clean:: clean-app
+
+clean-app:
+	$(gen_verbose) rm -rf ebin/ priv/mibs/ \
+		$(addprefix include/,$(addsuffix .hrl,$(notdir $(basename $(wildcard mibs/*.mib)))))
+
+# Copyright (c) 2015, Viktor Söderqvist <viktor@zuiderkwast.se>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: docs-deps
+
+# Configuration.
+
+ALL_DOC_DEPS_DIRS = $(addprefix $(DEPS_DIR)/,$(DOC_DEPS))
+
+# Targets.
+
+$(foreach dep,$(DOC_DEPS),$(eval $(call dep_target,$(dep))))
+
+ifneq ($(SKIP_DEPS),)
+doc-deps:
+else
+doc-deps: $(ALL_DOC_DEPS_DIRS)
+	@for dep in $(ALL_DOC_DEPS_DIRS) ; do $(MAKE) -C $$dep; done
+endif
+
+# Copyright (c) 2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: test-deps test-dir test-build clean-test-dir
+
+# Configuration.
+
+TEST_DIR ?= $(CURDIR)/test
+
+ALL_TEST_DEPS_DIRS = $(addprefix $(DEPS_DIR)/,$(TEST_DEPS))
+
+TEST_ERLC_OPTS ?= +debug_info +warn_export_vars +warn_shadow_vars +warn_obsolete_guard
+TEST_ERLC_OPTS += -DTEST=1
+
+# Targets.
+
+$(foreach dep,$(TEST_DEPS),$(eval $(call dep_target,$(dep))))
+
+ifneq ($(SKIP_DEPS),)
+test-deps:
+else
+test-deps: $(ALL_TEST_DEPS_DIRS)
+	@for dep in $(ALL_TEST_DEPS_DIRS) ; do $(MAKE) -C $$dep; done
+endif
+
+ifneq ($(strip $(TEST_DIR)),)
+test-dir:
+	$(gen_verbose) erlc -v $(TEST_ERLC_OPTS) -I include/ -o $(TEST_DIR) \
+		$(wildcard $(TEST_DIR)/*.erl $(TEST_DIR)/*/*.erl) -pa ebin/
+endif
+
+ifeq ($(wildcard ebin/test),)
+test-build:: ERLC_OPTS=$(TEST_ERLC_OPTS)
+test-build:: clean deps test-deps
+	@$(MAKE) --no-print-directory app-build test-dir ERLC_OPTS="$(TEST_ERLC_OPTS)"
+	$(gen_verbose) touch ebin/test
+else
+test-build:: ERLC_OPTS=$(TEST_ERLC_OPTS)
+test-build:: deps test-deps
+	@$(MAKE) --no-print-directory app-build test-dir ERLC_OPTS="$(TEST_ERLC_OPTS)"
+endif
+
+clean:: clean-test-dir
+
+clean-test-dir:
+ifneq ($(wildcard $(TEST_DIR)/*.beam),)
+	$(gen_verbose) rm -f $(TEST_DIR)/*.beam
+endif
+
+# Copyright (c) 2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: asciidoc asciidoc-guide asciidoc-manual install-asciidoc distclean-asciidoc
+
+MAN_INSTALL_PATH ?= /usr/local/share/man
+MAN_SECTIONS ?= 3 7
+
+docs:: asciidoc
+
+asciidoc: distclean-asciidoc doc-deps asciidoc-guide asciidoc-manual
+
+ifeq ($(wildcard doc/src/guide/book.asciidoc),)
+asciidoc-guide:
+else
+asciidoc-guide:
+	a2x -v -f pdf doc/src/guide/book.asciidoc && mv doc/src/guide/book.pdf doc/guide.pdf
+	a2x -v -f chunked doc/src/guide/book.asciidoc && mv doc/src/guide/book.chunked/ doc/html/
+endif
+
+ifeq ($(wildcard doc/src/manual/*.asciidoc),)
+asciidoc-manual:
+else
+asciidoc-manual:
+	for f in doc/src/manual/*.asciidoc ; do \
+		a2x -v -f manpage $$f ; \
+	done
+	for s in $(MAN_SECTIONS); do \
+		mkdir -p doc/man$$s/ ; \
+		mv doc/src/manual/*.$$s doc/man$$s/ ; \
+		gzip doc/man$$s/*.$$s ; \
+	done
+
+install-docs:: install-asciidoc
+
+install-asciidoc: asciidoc-manual
+	for s in $(MAN_SECTIONS); do \
+		mkdir -p $(MAN_INSTALL_PATH)/man$$s/ ; \
+		install -g 0 -o 0 -m 0644 doc/man$$s/*.gz $(MAN_INSTALL_PATH)/man$$s/ ; \
+	done
+endif
+
+distclean:: distclean-asciidoc
+
+distclean-asciidoc:
+	$(gen_verbose) rm -rf doc/html/ doc/guide.pdf doc/man3/ doc/man7/
+
+# Copyright (c) 2014-2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: bootstrap bootstrap-lib bootstrap-rel new list-templates
+
+# Core targets.
+
+help::
+	@printf "%s\n" "" \
+		"Bootstrap targets:" \
+		"  bootstrap          Generate a skeleton of an OTP application" \
+		"  bootstrap-lib      Generate a skeleton of an OTP library" \
+		"  bootstrap-rel      Generate the files needed to build a release" \
+		"  new t=TPL n=NAME   Generate a module NAME based on the template TPL" \
+		"  list-templates     List available templates"
+
+# Bootstrap templates.
+
+define bs_appsrc
+{application, $(PROJECT), [
+	{description, ""},
+	{vsn, "0.1.0"},
+	{id, "git"},
+	{modules, []},
+	{registered, []},
+	{applications, [
+		kernel,
+		stdlib
+	]},
+	{mod, {$(PROJECT)_app, []}},
+	{env, []}
+]}.
+endef
+
+define bs_appsrc_lib
+{application, $(PROJECT), [
+	{description, ""},
+	{vsn, "0.1.0"},
+	{id, "git"},
+	{modules, []},
+	{registered, []},
+	{applications, [
+		kernel,
+		stdlib
+	]}
+]}.
+endef
+
+define bs_Makefile
+PROJECT = $(PROJECT)
+include erlang.mk
+endef
+
+define bs_app
+-module($(PROJECT)_app).
+-behaviour(application).
+
+-export([start/2]).
+-export([stop/1]).
+
+start(_Type, _Args) ->
+	$(PROJECT)_sup:start_link().
+
+stop(_State) ->
+	ok.
+endef
+
+define bs_relx_config
+{release, {$(PROJECT)_release, "1"}, [$(PROJECT)]}.
+{extended_start_script, true}.
+{sys_config, "rel/sys.config"}.
+{vm_args, "rel/vm.args"}.
+endef
+
+define bs_sys_config
+[
+].
+endef
+
+define bs_vm_args
+-name $(PROJECT)@127.0.0.1
+-setcookie $(PROJECT)
+-heart
+endef
+
+# Normal templates.
+
+define tpl_supervisor
+-module($(n)).
+-behaviour(supervisor).
+
+-export([start_link/0]).
+-export([init/1]).
+
+start_link() ->
+	supervisor:start_link({local, ?MODULE}, ?MODULE, []).
+
+init([]) ->
+	Procs = [],
+	{ok, {{one_for_one, 1, 5}, Procs}}.
+endef
+
+define tpl_gen_server
+-module($(n)).
+-behaviour(gen_server).
+
+%% API.
+-export([start_link/0]).
+
+%% gen_server.
+-export([init/1]).
+-export([handle_call/3]).
+-export([handle_cast/2]).
+-export([handle_info/2]).
+-export([terminate/2]).
+-export([code_change/3]).
+
+-record(state, {
+}).
+
+%% API.
+
+-spec start_link() -> {ok, pid()}.
+start_link() ->
+	gen_server:start_link(?MODULE, [], []).
+
+%% gen_server.
+
+init([]) ->
+	{ok, #state{}}.
+
+handle_call(_Request, _From, State) ->
+	{reply, ignored, State}.
+
+handle_cast(_Msg, State) ->
+	{noreply, State}.
+
+handle_info(_Info, State) ->
+	{noreply, State}.
+
+terminate(_Reason, _State) ->
+	ok.
+
+code_change(_OldVsn, State, _Extra) ->
+	{ok, State}.
+endef
+
+define tpl_cowboy_http
+-module($(n)).
+-behaviour(cowboy_http_handler).
+
+-export([init/3]).
+-export([handle/2]).
+-export([terminate/3]).
+
+-record(state, {
+}).
+
+init(_, Req, _Opts) ->
+	{ok, Req, #state{}}.
+
+handle(Req, State=#state{}) ->
+	{ok, Req2} = cowboy_req:reply(200, Req),
+	{ok, Req2, State}.
+
+terminate(_Reason, _Req, _State) ->
+	ok.
+endef
+
+define tpl_gen_fsm
+-module($(n)).
+-behaviour(gen_fsm).
+
+%% API.
+-export([start_link/0]).
+
+%% gen_fsm.
+-export([init/1]).
+-export([state_name/2]).
+-export([handle_event/3]).
+-export([state_name/3]).
+-export([handle_sync_event/4]).
+-export([handle_info/3]).
+-export([terminate/3]).
+-export([code_change/4]).
+
+-record(state, {
+}).
+
+%% API.
+
+-spec start_link() -> {ok, pid()}.
+start_link() ->
+	gen_fsm:start_link(?MODULE, [], []).
+
+%% gen_fsm.
+
+init([]) ->
+	{ok, state_name, #state{}}.
+
+state_name(_Event, StateData) ->
+	{next_state, state_name, StateData}.
+
+handle_event(_Event, StateName, StateData) ->
+	{next_state, StateName, StateData}.
+
+state_name(_Event, _From, StateData) ->
+	{reply, ignored, state_name, StateData}.
+
+handle_sync_event(_Event, _From, StateName, StateData) ->
+	{reply, ignored, StateName, StateData}.
+
+handle_info(_Info, StateName, StateData) ->
+	{next_state, StateName, StateData}.
+
+terminate(_Reason, _StateName, _StateData) ->
+	ok.
+
+code_change(_OldVsn, StateName, StateData, _Extra) ->
+	{ok, StateName, StateData}.
+endef
+
+define tpl_cowboy_loop
+-module($(n)).
+-behaviour(cowboy_loop_handler).
+
+-export([init/3]).
+-export([info/3]).
+-export([terminate/3]).
+
+-record(state, {
+}).
+
+init(_, Req, _Opts) ->
+	{loop, Req, #state{}, 5000, hibernate}.
+
+info(_Info, Req, State) ->
+	{loop, Req, State, hibernate}.
+
+terminate(_Reason, _Req, _State) ->
+	ok.
+endef
+
+define tpl_cowboy_rest
+-module($(n)).
+
+-export([init/3]).
+-export([content_types_provided/2]).
+-export([get_html/2]).
+
+init(_, _Req, _Opts) ->
+	{upgrade, protocol, cowboy_rest}.
+
+content_types_provided(Req, State) ->
+	{[{{<<"text">>, <<"html">>, '*'}, get_html}], Req, State}.
+
+get_html(Req, State) ->
+	{<<"<html><body>This is REST!</body></html>">>, Req, State}.
+endef
+
+define tpl_cowboy_ws
+-module($(n)).
+-behaviour(cowboy_websocket_handler).
+
+-export([init/3]).
+-export([websocket_init/3]).
+-export([websocket_handle/3]).
+-export([websocket_info/3]).
+-export([websocket_terminate/3]).
+
+-record(state, {
+}).
+
+init(_, _, _) ->
+	{upgrade, protocol, cowboy_websocket}.
+
+websocket_init(_, Req, _Opts) ->
+	Req2 = cowboy_req:compact(Req),
+	{ok, Req2, #state{}}.
+
+websocket_handle({text, Data}, Req, State) ->
+	{reply, {text, Data}, Req, State};
+websocket_handle({binary, Data}, Req, State) ->
+	{reply, {binary, Data}, Req, State};
+websocket_handle(_Frame, Req, State) ->
+	{ok, Req, State}.
+
+websocket_info(_Info, Req, State) ->
+	{ok, Req, State}.
+
+websocket_terminate(_Reason, _Req, _State) ->
+	ok.
+endef
+
+define tpl_ranch_protocol
+-module($(n)).
+-behaviour(ranch_protocol).
+
+-export([start_link/4]).
+-export([init/4]).
+
+-type opts() :: [].
+-export_type([opts/0]).
+
+-record(state, {
+	socket :: inet:socket(),
+	transport :: module()
+}).
+
+start_link(Ref, Socket, Transport, Opts) ->
+	Pid = spawn_link(?MODULE, init, [Ref, Socket, Transport, Opts]),
+	{ok, Pid}.
+
+-spec init(ranch:ref(), inet:socket(), module(), opts()) -> ok.
+init(Ref, Socket, Transport, _Opts) ->
+	ok = ranch:accept_ack(Ref),
+	loop(#state{socket=Socket, transport=Transport}).
+
+loop(State) ->
+	loop(State).
+endef
+
+# Plugin-specific targets.
+
+define render_template
+	@echo "$${$(1)}" > $(2)
+endef
+
+$(foreach template,$(filter bs_%,$(.VARIABLES)),$(eval export $(template)))
+$(foreach template,$(filter tpl_%,$(.VARIABLES)),$(eval export $(template)))
+
+bootstrap:
+ifneq ($(wildcard src/),)
+	$(error Error: src/ directory already exists)
+endif
+	$(call render_template,bs_Makefile,Makefile)
+	@mkdir src/
+	$(call render_template,bs_appsrc,src/$(PROJECT).app.src)
+	$(call render_template,bs_app,src/$(PROJECT)_app.erl)
+	$(eval n := $(PROJECT)_sup)
+	$(call render_template,tpl_supervisor,src/$(PROJECT)_sup.erl)
+
+bootstrap-lib:
+ifneq ($(wildcard src/),)
+	$(error Error: src/ directory already exists)
+endif
+	$(call render_template,bs_Makefile,Makefile)
+	@mkdir src/
+	$(call render_template,bs_appsrc_lib,src/$(PROJECT).app.src)
+
+bootstrap-rel:
+ifneq ($(wildcard relx.config),)
+	$(error Error: relx.config already exists)
+endif
+ifneq ($(wildcard rel/),)
+	$(error Error: rel/ directory already exists)
+endif
+	$(call render_template,bs_relx_config,relx.config)
+	@mkdir rel/
+	$(call render_template,bs_sys_config,rel/sys.config)
+	$(call render_template,bs_vm_args,rel/vm.args)
+
+new:
+ifeq ($(wildcard src/),)
+	$(error Error: src/ directory does not exist)
+endif
+ifndef t
+	$(error Usage: $(MAKE) new t=TEMPLATE n=NAME)
+endif
+ifndef tpl_$(t)
+	$(error Unknown template)
+endif
+ifndef n
+	$(error Usage: $(MAKE) new t=TEMPLATE n=NAME)
+endif
+	$(call render_template,tpl_$(t),src/$(n).erl)
+
+list-templates:
+	@echo Available templates: $(sort $(patsubst tpl_%,%,$(filter tpl_%,$(.VARIABLES))))
+
+# Copyright (c) 2014-2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: clean-c_src distclean-c_src-env
+
+# Configuration.
+
+C_SRC_DIR ?= $(CURDIR)/c_src
+C_SRC_ENV ?= $(C_SRC_DIR)/env.mk
+C_SRC_OUTPUT ?= $(CURDIR)/priv/$(PROJECT).so
+C_SRC_TYPE ?= shared
+
+# System type and C compiler/flags.
+
+ifeq ($(PLATFORM),darwin)
+	CC ?= cc
+	CFLAGS ?= -O3 -std=c99 -arch x86_64 -finline-functions -Wall -Wmissing-prototypes
+	CXXFLAGS ?= -O3 -arch x86_64 -finline-functions -Wall
+	LDFLAGS ?= -arch x86_64 -flat_namespace -undefined suppress
+else ifeq ($(PLATFORM),freebsd)
+	CC ?= cc
+	CFLAGS ?= -O3 -std=c99 -finline-functions -Wall -Wmissing-prototypes
+	CXXFLAGS ?= -O3 -finline-functions -Wall
+else ifeq ($(PLATFORM),linux)
+	CC ?= gcc
+	CFLAGS ?= -O3 -std=c99 -finline-functions -Wall -Wmissing-prototypes
+	CXXFLAGS ?= -O3 -finline-functions -Wall
+endif
+
+CFLAGS += -fPIC -I $(ERTS_INCLUDE_DIR) -I $(ERL_INTERFACE_INCLUDE_DIR)
+CXXFLAGS += -fPIC -I $(ERTS_INCLUDE_DIR) -I $(ERL_INTERFACE_INCLUDE_DIR)
+
+LDLIBS += -L $(ERL_INTERFACE_LIB_DIR) -lerl_interface -lei
+
+ifeq ($(C_SRC_TYPE),shared)
+LDFLAGS += -shared
+endif
+
+# Verbosity.
+
+c_verbose_0 = @echo " C     " $(?F);
+c_verbose = $(c_verbose_$(V))
+
+cpp_verbose_0 = @echo " CPP   " $(?F);
+cpp_verbose = $(cpp_verbose_$(V))
+
+link_verbose_0 = @echo " LD    " $(@F);
+link_verbose = $(link_verbose_$(V))
+
+# Targets.
+
+ifeq ($(wildcard $(C_SRC_DIR)),)
+else ifneq ($(wildcard $(C_SRC_DIR)/Makefile),)
+app:: app-c_src
+
+test-build:: app-c_src
+
+app-c_src:
+	$(MAKE) -C $(C_SRC_DIR)
+
+clean::
+	$(MAKE) -C $(C_SRC_DIR) clean
+
+else
+
+ifeq ($(SOURCES),)
+SOURCES := $(shell find $(C_SRC_DIR) -type f \( -name "*.c" -o -name "*.C" -o -name "*.cc" -o -name "*.cpp" \))
+endif
+OBJECTS = $(addsuffix .o, $(basename $(SOURCES)))
+
+COMPILE_C = $(c_verbose) $(CC) $(CFLAGS) $(CPPFLAGS) -c
+COMPILE_CPP = $(cpp_verbose) $(CXX) $(CXXFLAGS) $(CPPFLAGS) -c
+
+app:: $(C_SRC_ENV) $(C_SRC_OUTPUT)
+
+test-build:: $(C_SRC_ENV) $(C_SRC_OUTPUT)
+
+$(C_SRC_OUTPUT): $(OBJECTS)
+	@mkdir -p priv/
+	$(link_verbose) $(CC) $(OBJECTS) $(LDFLAGS) $(LDLIBS) -o $(C_SRC_OUTPUT)
+
+%.o: %.c
+	$(COMPILE_C) $(OUTPUT_OPTION) $<
+
+%.o: %.cc
+	$(COMPILE_CPP) $(OUTPUT_OPTION) $<
+
+%.o: %.C
+	$(COMPILE_CPP) $(OUTPUT_OPTION) $<
+
+%.o: %.cpp
+	$(COMPILE_CPP) $(OUTPUT_OPTION) $<
+
+clean:: clean-c_src
+
+clean-c_src:
+	$(gen_verbose) rm -f $(C_SRC_OUTPUT) $(OBJECTS)
+
+endif
+
+ifneq ($(wildcard $(C_SRC_DIR)),)
+$(C_SRC_ENV):
+	@$(ERL) -eval "file:write_file(\"$(C_SRC_ENV)\", \
+		io_lib:format( \
+			\"ERTS_INCLUDE_DIR ?= ~s/erts-~s/include/~n\" \
+			\"ERL_INTERFACE_INCLUDE_DIR ?= ~s~n\" \
+			\"ERL_INTERFACE_LIB_DIR ?= ~s~n\", \
+			[code:root_dir(), erlang:system_info(version), \
+			code:lib_dir(erl_interface, include), \
+			code:lib_dir(erl_interface, lib)])), \
+		halt()."
+
+distclean:: distclean-c_src-env
+
+distclean-c_src-env:
+	$(gen_verbose) rm -f $(C_SRC_ENV)
+
+-include $(C_SRC_ENV)
+endif
+
+# Copyright (c) 2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: ci ci-setup distclean-kerl
+
+KERL ?= $(CURDIR)/kerl
+export KERL
+
+KERL_URL ?= https://raw.githubusercontent.com/yrashk/kerl/master/kerl
+
+OTP_GIT ?= https://github.com/erlang/otp
+
+CI_INSTALL_DIR ?= $(HOME)/erlang
+CI_OTP ?=
+
+ifeq ($(strip $(CI_OTP)),)
+ci::
+else
+ci:: $(KERL) $(addprefix ci-,$(CI_OTP))
+
+ci-setup::
+
+ci_verbose_0 = @echo " CI    " $(1);
+ci_verbose = $(ci_verbose_$(V))
+
+define ci_target
+ci-$(1): $(CI_INSTALL_DIR)/$(1)
+	-$(ci_verbose) \
+		PATH="$(CI_INSTALL_DIR)/$(1)/bin:$(PATH)" \
+		CI_OTP_RELEASE="$(1)" \
+		CT_OPTS="-label $(1)" \
+		$(MAKE) clean ci-setup tests
+endef
+
+$(foreach otp,$(CI_OTP),$(eval $(call ci_target,$(otp))))
+
+define ci_otp_target
+$(CI_INSTALL_DIR)/$(1):
+	$(KERL) build git $(OTP_GIT) $(1) $(1)
+	$(KERL) install $(1) $(CI_INSTALL_DIR)/$(1)
+endef
+
+$(foreach otp,$(CI_OTP),$(eval $(call ci_otp_target,$(otp))))
+
+define kerl_fetch
+	$(call core_http_get,$(KERL),$(KERL_URL))
+	chmod +x $(KERL)
+endef
+
+$(KERL):
+	@$(call kerl_fetch)
+
+help::
+	@printf "%s\n" "" \
+		"Continuous Integration targets:" \
+		"  ci          Run '$(MAKE) tests' on all configured Erlang versions." \
+		"" \
+		"The CI_OTP variable must be defined with the Erlang versions" \
+		"that must be tested. For example: CI_OTP = OTP-17.3.4 OTP-17.5.3"
+
+distclean:: distclean-kerl
+
+distclean-kerl:
+	$(gen_verbose) rm -rf $(KERL)
+endif
+
+# Copyright (c) 2013-2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: ct distclean-ct
+
+# Configuration.
+
+CT_OPTS ?=
+ifneq ($(wildcard $(TEST_DIR)),)
+	CT_SUITES ?= $(sort $(subst _SUITE.erl,,$(shell find $(TEST_DIR) -type f -name \*_SUITE.erl -exec basename {} \;)))
+else
+	CT_SUITES ?=
+endif
+
+# Core targets.
+
+tests:: ct
+
+distclean:: distclean-ct
+
+help::
+	@printf "%s\n" "" \
+		"Common_test targets:" \
+		"  ct          Run all the common_test suites for this project" \
+		"" \
+		"All your common_test suites have their associated targets." \
+		"A suite named http_SUITE can be ran using the ct-http target."
+
+# Plugin-specific targets.
+
+CT_RUN = ct_run \
+	-no_auto_compile \
+	-noinput \
+	-pa $(CURDIR)/ebin $(DEPS_DIR)/*/ebin $(TEST_DIR) \
+	-dir $(TEST_DIR) \
+	-logdir $(CURDIR)/logs
+
+ifeq ($(CT_SUITES),)
+ct:
+else
+ct: test-build
+	@mkdir -p $(CURDIR)/logs/
+	$(gen_verbose) $(CT_RUN) -suite $(addsuffix _SUITE,$(CT_SUITES)) $(CT_OPTS)
+endif
+
+define ct_suite_target
+ct-$(1): test-build
+	@mkdir -p $(CURDIR)/logs/
+	$(gen_verbose) $(CT_RUN) -suite $(addsuffix _SUITE,$(1)) $(CT_OPTS)
+endef
+
+$(foreach test,$(CT_SUITES),$(eval $(call ct_suite_target,$(test))))
+
+distclean-ct:
+	$(gen_verbose) rm -rf $(CURDIR)/logs/
+
+# Copyright (c) 2013-2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: plt distclean-plt dialyze
+
+# Configuration.
+
+DIALYZER_PLT ?= $(CURDIR)/.$(PROJECT).plt
+export DIALYZER_PLT
+
+PLT_APPS ?=
+DIALYZER_DIRS ?= --src -r src
+DIALYZER_OPTS ?= -Werror_handling -Wrace_conditions \
+	-Wunmatched_returns # -Wunderspecs
+
+# Core targets.
+
+check:: dialyze
+
+distclean:: distclean-plt
+
+help::
+	@printf "%s\n" "" \
+		"Dialyzer targets:" \
+		"  plt         Build a PLT file for this project" \
+		"  dialyze     Analyze the project using Dialyzer"
+
+# Plugin-specific targets.
+
+$(DIALYZER_PLT): deps app
+	@dialyzer --build_plt --apps erts kernel stdlib $(PLT_APPS) $(ALL_DEPS_DIRS)
+
+plt: $(DIALYZER_PLT)
+
+distclean-plt:
+	$(gen_verbose) rm -f $(DIALYZER_PLT)
+
+ifneq ($(wildcard $(DIALYZER_PLT)),)
+dialyze:
+else
+dialyze: $(DIALYZER_PLT)
+endif
+	@dialyzer --no_native $(DIALYZER_DIRS) $(DIALYZER_OPTS)
+
+# Copyright (c) 2013-2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: distclean-edoc edoc
+
+# Configuration.
+
+EDOC_OPTS ?=
+
+# Core targets.
+
+docs:: distclean-edoc edoc
+
+distclean:: distclean-edoc
+
+# Plugin-specific targets.
+
+edoc: doc-deps
+	$(gen_verbose) $(ERL) -eval 'edoc:application($(PROJECT), ".", [$(EDOC_OPTS)]), halt().'
+
+distclean-edoc:
+	$(gen_verbose) rm -f doc/*.css doc/*.html doc/*.png doc/edoc-info
+
+# Copyright (c) 2014, Juan Facorro <juan@inaka.net>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: elvis distclean-elvis
+
+# Configuration.
+
+ELVIS_CONFIG ?= $(CURDIR)/elvis.config
+
+ELVIS ?= $(CURDIR)/elvis
+export ELVIS
+
+ELVIS_URL ?= https://github.com/inaka/elvis/releases/download/0.2.3/elvis
+ELVIS_CONFIG_URL ?= https://github.com/inaka/elvis/releases/download/0.2.3/elvis.config
+ELVIS_OPTS ?=
+
+# Core targets.
+
+help::
+	@printf "%s\n" "" \
+		"Elvis targets:" \
+		"  elvis       Run Elvis using the local elvis.config or download the default otherwise"
+
+distclean:: distclean-elvis
+
+# Plugin-specific targets.
+
+$(ELVIS):
+	@$(call core_http_get,$(ELVIS),$(ELVIS_URL))
+	@chmod +x $(ELVIS)
+
+$(ELVIS_CONFIG):
+	@$(call core_http_get,$(ELVIS_CONFIG),$(ELVIS_CONFIG_URL))
+
+elvis: $(ELVIS) $(ELVIS_CONFIG)
+	@$(ELVIS) rock -c $(ELVIS_CONFIG) $(ELVIS_OPTS)
+
+distclean-elvis:
+	$(gen_verbose) rm -rf $(ELVIS)
+
+# Copyright (c) 2013-2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+# Configuration.
+
+DTL_FULL_PATH ?= 0
+
+# Verbosity.
+
+dtl_verbose_0 = @echo " DTL   " $(filter %.dtl,$(?F));
+dtl_verbose = $(dtl_verbose_$(V))
+
+# Core targets.
+
+define compile_erlydtl
+	$(dtl_verbose) $(ERL) -pa ebin/ $(DEPS_DIR)/erlydtl/ebin/ -eval ' \
+		Compile = fun(F) -> \
+			S = fun (1) -> re:replace(filename:rootname(string:sub_string(F, 11), ".dtl"), "/",  "_",  [{return, list}, global]); \
+				(0) -> filename:basename(F, ".dtl") \
+			end, \
+			Module = list_to_atom(string:to_lower(S($(DTL_FULL_PATH))) ++ "_dtl"), \
+			{ok, _} = erlydtl:compile(F, Module, [{out_dir, "ebin/"}, return_errors, {doc_root, "templates"}]) \
+		end, \
+		_ = [Compile(F) || F <- string:tokens("$(1)", " ")], \
+		halt().'
+endef
+
+ifneq ($(wildcard src/),)
+ebin/$(PROJECT).app:: $(shell find templates -type f -name \*.dtl 2>/dev/null)
+	$(if $(strip $?),$(call compile_erlydtl,$?))
+endif
+
+# Copyright (c) 2014 Dave Cottlehuber <dch@skunkwerks.at>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: distclean-escript escript
+
+# Configuration.
+
+ESCRIPT_NAME ?= $(PROJECT)
+ESCRIPT_COMMENT ?= This is an -*- erlang -*- file
+
+ESCRIPT_BEAMS ?= "ebin/*", "deps/*/ebin/*"
+ESCRIPT_SYS_CONFIG ?= "rel/sys.config"
+ESCRIPT_EMU_ARGS ?= -pa . \
+	-sasl errlog_type error \
+	-escript main $(ESCRIPT_NAME)
+ESCRIPT_SHEBANG ?= /usr/bin/env escript
+ESCRIPT_STATIC ?= "deps/*/priv/**", "priv/**"
+
+# Core targets.
+
+distclean:: distclean-escript
+
+help::
+	@printf "%s\n" "" \
+		"Escript targets:" \
+		"  escript     Build an executable escript archive" \
+
+# Plugin-specific targets.
+
+# Based on https://github.com/synrc/mad/blob/master/src/mad_bundle.erl
+# Copyright (c) 2013 Maxim Sokhatsky, Synrc Research Center
+# Modified MIT License, https://github.com/synrc/mad/blob/master/LICENSE :
+# Software may only be used for the great good and the true happiness of all
+# sentient beings.
+
+define ESCRIPT_RAW
+'Read = fun(F) -> {ok, B} = file:read_file(filename:absname(F)), B end,'\
+'Files = fun(L) -> A = lists:concat([filelib:wildcard(X)||X<- L ]),'\
+'  [F || F <- A, not filelib:is_dir(F) ] end,'\
+'Squash = fun(L) -> [{filename:basename(F), Read(F) } || F <- L ] end,'\
+'Zip = fun(A, L) -> {ok,{_,Z}} = zip:create(A, L, [{compress,all},memory]), Z end,'\
+'Ez = fun(Escript) ->'\
+'  Static = Files([$(ESCRIPT_STATIC)]),'\
+'  Beams = Squash(Files([$(ESCRIPT_BEAMS), $(ESCRIPT_SYS_CONFIG)])),'\
+'  Archive = Beams ++ [{ "static.gz", Zip("static.gz", Static)}],'\
+'  escript:create(Escript, [ $(ESCRIPT_OPTIONS)'\
+'    {archive, Archive, [memory]},'\
+'    {shebang, "$(ESCRIPT_SHEBANG)"},'\
+'    {comment, "$(ESCRIPT_COMMENT)"},'\
+'    {emu_args, " $(ESCRIPT_EMU_ARGS)"}'\
+'  ]),'\
+'  file:change_mode(Escript, 8#755)'\
+'end,'\
+'Ez("$(ESCRIPT_NAME)"),'\
+'halt().'
+endef
+
+ESCRIPT_COMMAND = $(subst ' ',,$(ESCRIPT_RAW))
+
+escript:: distclean-escript deps app
+	$(gen_verbose) $(ERL) -eval $(ESCRIPT_COMMAND)
+
+distclean-escript:
+	$(gen_verbose) rm -f $(ESCRIPT_NAME)
+
+# Copyright (c) 2014, Enrique Fernandez <enrique.fernandez@erlang-solutions.com>
+# Copyright (c) 2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is contributed to erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: eunit
+
+# Configuration
+
+# All modules in TEST_DIR
+ifeq ($(strip $(TEST_DIR)),)
+TEST_DIR_MODS = 
+else
+TEST_DIR_MODS = $(notdir $(basename $(shell find $(TEST_DIR) -type f -name *.beam)))
+endif
+
+# All modules in 'ebin'
+EUNIT_EBIN_MODS = $(notdir $(basename $(shell find ebin -type f -name *.beam)))
+# Only those modules in TEST_DIR with no matching module in 'ebin'.
+# This is done to avoid some tests being executed twice.
+EUNIT_MODS = $(filter-out $(patsubst %,%_tests,$(EUNIT_EBIN_MODS)),$(TEST_DIR_MODS))
+TAGGED_EUNIT_TESTS = $(foreach mod,$(EUNIT_EBIN_MODS) $(EUNIT_MODS),{module,$(mod)})
+
+EUNIT_OPTS ?=
+
+# Utility functions
+
+define str-join
+	$(shell echo '$(strip $(1))' | sed -e "s/ /,/g")
+endef
+
+# Core targets.
+
+tests:: eunit
+
+help::
+	@printf "%s\n" "" \
+		"EUnit targets:" \
+		"  eunit       Run all the EUnit tests for this project"
+
+# Plugin-specific targets.
+
+EUNIT_RUN_BEFORE ?=
+EUNIT_RUN_AFTER ?=
+EUNIT_RUN = $(ERL) \
+	-pa $(TEST_DIR) $(DEPS_DIR)/*/ebin \
+	-pz ebin \
+	$(EUNIT_RUN_BEFORE) \
+	-eval 'case eunit:test([$(call str-join,$(TAGGED_EUNIT_TESTS))],\
+		[$(EUNIT_OPTS)]) of ok -> ok; error -> halt(1) end.' \
+	$(EUNIT_RUN_AFTER) \
+	-eval 'halt(0).'
+
+eunit: test-build
+	$(gen_verbose) $(EUNIT_RUN)
+
+# Copyright (c) 2013-2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: relx-rel distclean-relx-rel distclean-relx run
+
+# Configuration.
+
+RELX_CONFIG ?= $(CURDIR)/relx.config
+
+RELX ?= $(CURDIR)/relx
+export RELX
+
+RELX_URL ?= https://github.com/erlware/relx/releases/download/v2.0.0/relx
+RELX_OPTS ?=
+RELX_OUTPUT_DIR ?= _rel
+
+ifeq ($(firstword $(RELX_OPTS)),-o)
+	RELX_OUTPUT_DIR = $(word 2,$(RELX_OPTS))
+else
+	RELX_OPTS += -o $(RELX_OUTPUT_DIR)
+endif
+
+# Core targets.
+
+ifeq ($(IS_DEP),)
+ifneq ($(wildcard $(RELX_CONFIG)),)
+rel:: distclean-relx-rel relx-rel
+endif
+endif
+
+distclean:: distclean-relx-rel distclean-relx
+
+# Plugin-specific targets.
+
+define relx_fetch
+	$(call core_http_get,$(RELX),$(RELX_URL))
+	chmod +x $(RELX)
+endef
+
+$(RELX):
+	@$(call relx_fetch)
+
+relx-rel: $(RELX)
+	@$(RELX) -c $(RELX_CONFIG) $(RELX_OPTS)
+
+distclean-relx-rel:
+	$(gen_verbose) rm -rf $(RELX_OUTPUT_DIR)
+
+distclean-relx:
+	$(gen_verbose) rm -rf $(RELX)
+
+# Run target.
+
+ifeq ($(wildcard $(RELX_CONFIG)),)
+run:
+else
+
+define get_relx_release.erl
+	{ok, Config} = file:consult("$(RELX_CONFIG)"),
+	{release, {Name, _}, _} = lists:keyfind(release, 1, Config),
+	io:format("~s", [Name]),
+	halt(0).
+endef
+
+RELX_RELEASE = `$(call erlang,$(get_relx_release.erl))`
+
+run: all
+	@$(RELX_OUTPUT_DIR)/$(RELX_RELEASE)/bin/$(RELX_RELEASE) console
+
+help::
+	@printf "%s\n" "" \
+		"Relx targets:" \
+		"  run         Compile the project, build the release and run it"
+
+endif
+
+# Copyright (c) 2014, M Robert Martin <rob@version2beta.com>
+# This file is contributed to erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: shell
+
+# Configuration.
+
+SHELL_PATH ?= -pa $(CURDIR)/ebin $(DEPS_DIR)/*/ebin
+SHELL_OPTS ?=
+
+ALL_SHELL_DEPS_DIRS = $(addprefix $(DEPS_DIR)/,$(SHELL_DEPS))
+
+# Core targets
+
+help::
+	@printf "%s\n" "" \
+		"Shell targets:" \
+		"  shell       Run an erlang shell with SHELL_OPTS or reasonable default"
+
+# Plugin-specific targets.
+
+$(foreach dep,$(SHELL_DEPS),$(eval $(call dep_target,$(dep))))
+
+build-shell-deps: $(ALL_SHELL_DEPS_DIRS)
+	@for dep in $(ALL_SHELL_DEPS_DIRS) ; do $(MAKE) -C $$dep ; done
+
+shell: build-shell-deps
+	$(gen_verbose) erl $(SHELL_PATH) $(SHELL_OPTS)
+
+# Copyright (c) 2015, Loïc Hoguin <essen@ninenines.eu>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+ifneq ($(wildcard $(DEPS_DIR)/triq),)
+.PHONY: triq
+
+# Targets.
+
+tests:: triq
+
+define triq_check.erl
+	code:add_pathsa(["$(CURDIR)/ebin", "$(DEPS_DIR)/*/ebin"]),
+	try
+		case $(1) of
+			all -> [true] =:= lists:usort([triq:check(M) || M <- [$(MODULES)]]);
+			module -> triq:check($(2));
+			function -> triq:check($(2))
+		end
+	of
+		true -> halt(0);
+		_ -> halt(1)
+	catch error:undef ->
+		io:format("Undefined property or module~n"),
+		halt(0)
+	end.
+endef
+
+ifdef t
+ifeq (,$(findstring :,$(t)))
+triq: test-build
+	@$(call erlang,$(call triq_check.erl,module,$(t)))
+else
+triq: test-build
+	@echo Testing $(t)/0
+	@$(call erlang,$(call triq_check.erl,function,$(t)()))
+endif
+else
+triq: test-build
+	$(eval MODULES := $(shell find ebin -type f -name \*.beam \
+		| sed "s/ebin\//'/;s/\.beam/',/" | sed '$$s/.$$//'))
+	$(gen_verbose) $(call erlang,$(call triq_check.erl,all,undefined))
+endif
+endif
+
+# Copyright (c) 2015, Euen Lopez <euen@inakanetworks.com>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+.PHONY: xref distclean-xref
+
+# Configuration.
+
+ifeq ($(XREF_CONFIG),)
+	XREF_ARGS :=
+else
+	XREF_ARGS := -c $(XREF_CONFIG)
+endif
+
+XREFR ?= $(CURDIR)/xrefr
+export XREFR
+
+XREFR_URL ?= https://github.com/inaka/xref_runner/releases/download/0.2.0/xrefr
+
+# Core targets.
+
+help::
+	@printf "%s\n" "" \
+		"Xref targets:" \
+		"  xref        Run Xrefr using $XREF_CONFIG as config file if defined"
+
+distclean:: distclean-xref
+
+# Plugin-specific targets.
+
+$(XREFR):
+	@$(call core_http_get,$(XREFR),$(XREFR_URL))
+	@chmod +x $(XREFR)
+
+xref: deps app $(XREFR)
+	$(gen_verbose) $(XREFR) $(XREFR_ARGS)
+
+distclean-xref:
+	$(gen_verbose) rm -rf $(XREFR)
+
+# Copyright 2015, Viktor Söderqvist <viktor@zuiderkwast.se>
+# This file is part of erlang.mk and subject to the terms of the ISC License.
+
+COVER_REPORT_DIR = cover
+
+# utility variables for representing special symbols
+empty :=
+space := $(empty) $(empty)
+comma := ,
+
+# Hook in coverage to eunit
+
+ifdef COVER
+ifdef EUNIT_RUN
+EUNIT_RUN_BEFORE += -eval \
+	'case cover:compile_beam_directory("ebin") of \
+		{error, _} -> halt(1); \
+		_ -> ok \
+	end.'
+EUNIT_RUN_AFTER += -eval 'cover:export("eunit.coverdata").'
+endif
+endif
+
+# Hook in coverage to ct
+
+ifdef COVER
+ifdef CT_RUN
+
+# All modules in 'ebin'
+COVER_MODS = $(notdir $(basename $(shell echo ebin/*.beam)))
+
+test-build:: $(TEST_DIR)/ct.cover.spec
+
+$(TEST_DIR)/ct.cover.spec:
+	@echo Cover mods: $(COVER_MODS)
+	$(gen_verbose) printf "%s\n" \
+		'{incl_mods,[$(subst $(space),$(comma),$(COVER_MODS))]}.' \
+		'{export,"$(CURDIR)/ct.coverdata"}.' > $@
+
+CT_RUN += -cover $(TEST_DIR)/ct.cover.spec
+endif
+endif
+
+# Core targets
+
+ifdef COVER
+ifneq ($(COVER_REPORT_DIR),)
+tests::
+	@$(MAKE) --no-print-directory cover-report
+endif
+endif
+
+clean:: coverdata-clean
+
+ifneq ($(COVER_REPORT_DIR),)
+distclean:: cover-report-clean
+endif
+
+help::
+	@printf "%s\n" "" \
+		"Cover targets:" \
+		"  cover-report  Generate a HTML coverage report from previously collected" \
+		"                cover data." \
+		"  all.coverdata Merge {eunit,ct}.coverdata into one coverdata file." \
+		"" \
+		"If COVER=1 is set, coverage data is generated by the targets eunit and ct. The" \
+		"target tests additionally generates a HTML coverage report from the combined" \
+		"coverdata files from each of these testing tools. HTML reports can be disabled" \
+		"by setting COVER_REPORT_DIR to empty."
+
+# Plugin specific targets
+
+COVERDATA = $(filter-out all.coverdata,$(wildcard *.coverdata))
+
+.PHONY: coverdata-clean
+coverdata-clean:
+	$(gen_verbose) rm -f *.coverdata ct.cover.spec
+
+# Merge all coverdata files into one.
+all.coverdata: $(COVERDATA)
+	$(gen_verbose) $(ERL) -eval ' \
+		$(foreach f,$(COVERDATA),cover:import("$(f)") == ok orelse halt(1),) \
+		cover:export("$@"), halt(0).'
+
+# These are only defined if COVER_REPORT_DIR is non-empty. Set COVER_REPORT_DIR to
+# empty if you want the coverdata files but not the HTML report.
+ifneq ($(COVER_REPORT_DIR),)
+
+.PHONY: cover-report-clean cover-report
+
+cover-report-clean:
+	$(gen_verbose) rm -rf $(COVER_REPORT_DIR)
+
+ifeq ($(COVERDATA),)
+cover-report:
+else
+
+# Modules which include eunit.hrl always contain one line without coverage
+# because eunit defines test/0 which is never called. We compensate for this.
+EUNIT_HRL_MODS = $(subst $(space),$(comma),$(shell \
+	grep -e '^\s*-include.*include/eunit\.hrl"' src/*.erl \
+	| sed "s/^src\/\(.*\)\.erl:.*/'\1'/" | uniq))
+
+define cover_report.erl
+	$(foreach f,$(COVERDATA),cover:import("$(f)") == ok orelse halt(1),)
+	Ms = cover:imported_modules(),
+	[cover:analyse_to_file(M, "$(COVER_REPORT_DIR)/" ++ atom_to_list(M)
+		++ ".COVER.html", [html])  || M <- Ms],
+	Report = [begin {ok, R} = cover:analyse(M, module), R end || M <- Ms],
+	EunitHrlMods = [$(EUNIT_HRL_MODS)],
+	Report1 = [{M, {Y, case lists:member(M, EunitHrlMods) of
+		true -> N - 1; false -> N end}} || {M, {Y, N}} <- Report],
+	TotalY = lists:sum([Y || {_, {Y, _}} <- Report1]),
+	TotalN = lists:sum([N || {_, {_, N}} <- Report1]),
+	TotalPerc = round(100 * TotalY / (TotalY + TotalN)),
+	{ok, F} = file:open("$(COVER_REPORT_DIR)/index.html", [write]),
+	io:format(F, "<!DOCTYPE html><html>~n"
+		"<head><meta charset=\"UTF-8\">~n"
+		"<title>Coverage report</title></head>~n"
+		"<body>~n", []),
+	io:format(F, "<h1>Coverage</h1>~n<p>Total: ~p%</p>~n", [TotalPerc]),
+	io:format(F, "<table><tr><th>Module</th><th>Coverage</th></tr>~n", []),
+	[io:format(F, "<tr><td><a href=\"~p.COVER.html\">~p</a></td>"
+		"<td>~p%</td></tr>~n",
+		[M, M, round(100 * Y / (Y + N))]) || {M, {Y, N}} <- Report1],
+	How = "$(subst $(space),$(comma)$(space),$(basename $(COVERDATA)))",
+	Date = "$(shell date -u "+%Y-%m-%dT%H:%M:%SZ")",
+	io:format(F, "</table>~n"
+		"<p>Generated using ~s and erlang.mk on ~s.</p>~n"
+		"</body></html>", [How, Date]),
+	halt().
+endef
+
+cover-report:
+	$(gen_verbose) mkdir -p $(COVER_REPORT_DIR)
+	$(gen_verbose) $(call erlang,$(cover_report.erl))
+
+endif
+endif # ifneq ($(COVER_REPORT_DIR),)
